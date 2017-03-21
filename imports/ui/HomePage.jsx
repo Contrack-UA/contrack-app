@@ -8,6 +8,7 @@ export default class HomePage extends Component {
 
     return (
       <div className="home-layout">
+        {new WOW().init()}
         <section id="intro" className="colored text-center">
           <div className="container">
             <div className="intro-well wow animated bounceIn" >
