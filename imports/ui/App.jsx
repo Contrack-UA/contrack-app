@@ -47,14 +47,6 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Navbar/>
-
-        <header>
-        </header>
-
-        <div>
-          {this.renderInvoices()}
-        </div>
         <HomePage/>
       </div>
     );
