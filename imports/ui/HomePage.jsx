@@ -85,7 +85,7 @@ export default class HomePage extends Component {
                             <br/>
                         </div>
                         <div className="col-sm-6">
-                            <img id="ipad" src="../../public/us.png" alt="" className="wow animated fadeInRight" data-wow-delay="1s"/>
+                            <img id="ipad" src="./img/us.png" alt="" className="wow animated fadeInRight" data-wow-delay="1s"/>
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ export default class HomePage extends Component {
                             </h3>
                         </div>
                         <div className="col-md-8  wow fadeInUp animated">
-                            <img src="../../public/colombia.png" className="img-responsive wow" data-wow-delay="0.6s" alt="picture"/>
+                            <img src="./img/colombia.png" className="img-responsive wow" data-wow-delay="0.6s" alt="picture"/>
                         </div>
                     </div>
                 </div>
