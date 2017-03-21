@@ -19046,10 +19046,6 @@ h1 {
   overflow-x: hidden;
 }
 
-.home-layout section#ipad h3 {
-  padding-top: 100px;
-}
-
 @media (max-width: 768px) {
   .home-layout section#ipad h3 {
     padding-top: 0;
@@ -19325,10 +19321,6 @@ footer ul li {
   overflow-x: hidden;
 }
 
-.home-layout section#ipad h3 {
-  padding-top: 100px;
-}
-
 @media (max-width: 768px) {
   .home-layout section#ipad h3 {
     padding-top: 0;
@@ -19345,4 +19337,12 @@ footer ul li {
 
 .home-layout section#final .btn {
   margin: 20px auto 30px;
+}
+
+.last {
+  padding-bottom: 50px
+}
+
+.red-font {
+  color: rgb(152, 21, 21);
 }
