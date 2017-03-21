@@ -10,6 +10,7 @@
     "react": "^15.4.2",
     "react-addons-pure-render-mixin": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-sidebar": "^2.3.0"
+    "react-sidebar": "^2.3.0",
+    "wow.js": "^1.2.2"
   }
 }
