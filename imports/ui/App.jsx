@@ -2,9 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import { Invoices } from '../api/invoices.js';
+import { Projects } from '../api/projects.js';
 import HomePage from './HomePage';
 import Navbar from './Navbar';
 import Invoice from './Invoice.jsx';
+import Project from './Project.jsx';
 
 
 // App component - represents the whole app

@@ -2,7 +2,6 @@ import {Meteor} from 'meteor/meteor';
 import React, {Component, PropTypes} from 'react';
 import Accounts from './AccountsUIWrapper.jsx';
 
-// Task component - represents a single todo item
 export default class Navbar extends Component {
     render() {
         return (

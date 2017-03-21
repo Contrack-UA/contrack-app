@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-// Task component - represents a single todo item
+// Invoice component
 export default class Invoice extends Component {
   render() {
     return (
@@ -15,7 +15,5 @@ export default class Invoice extends Component {
 }
 
 Invoice.propTypes = {
-  // This component gets the task to display through a React prop.
-  // We can use propTypes to indicate it is required
   inv: PropTypes.object.isRequired,
 };
