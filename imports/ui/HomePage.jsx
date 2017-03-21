@@ -14,7 +14,7 @@ export default class HomePage extends Component {
               <div className="row">
                 <div className="col-lg-6 col-sm-6"></div>
                 <div className="col-lg-6 col-sm-6 textP" >
-                  <h1 className="textP">Esta plataforma esta diseñada para uso de todos los colombianos.</h1>
+                  <h1 className="textP">Esta plataforma está diseñada para uso de todos los colombianos.</h1>
                   <h2 className="hidden-xs">Analiza, descubre y denuncia</h2>
                   <Accounts /><br/>
                   <p>Si no tienes cuenta, ve directamente a <a href="https://google.com">los proyectos</a></p>
@@ -53,7 +53,7 @@ export default class HomePage extends Component {
                   <i className="fa fa-search fa-3x"></i>
                 </div>
                 <h1 className="icntitle">3. Análisis</h1>
-                <p className="icnp text-justify">Analizar y validar los soportes de compra (las facturas asociadas a las compras de materiales, etc) para evitar que las facturas sean falsificadas. Asegurar que el precio de cada ítem corresponda a su precio real ,que la cantidad de ítems solicitados sea normal para el tamaño del proyecto ,que los artículos comprados sí sean necesarios para el proyecto.
+                <p className="icnp text-justify">Analizar y validar los soportes de compra (las facturas asociadas a las compras de materiales, etc) para evitar que las facturas sean falsificadas. Asegurar que el precio de cada ítem corresponda a su precio real, que la cantidad de ítems solicitados sea normal para el tamaño del proyecto, que los artículos comprados sí sean necesarios para el proyecto.
                 </p>
               </div>
               <div className="col-md-3 wow fadeInUp animated" data-wow-delay="1.6s">
@@ -82,7 +82,7 @@ export default class HomePage extends Component {
                   <li>Esteban Galán Zambrano</li>
                   <li>Margarita Gómez Ballén</li>
                   <li>Nicolás Gómez González</li>
-                  <li>Jose Gabriel Tamura Lara</li>
+                  <li>Jose Gabriel Tamula Lara</li>
                 </ul>
                 <br/>
               </div>
