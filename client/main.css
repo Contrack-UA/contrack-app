@@ -1,7 +1,12 @@
 @import url("//fonts.googleapis.com/css?family=Lato:300,400,700,300italic");
 
 #intro{
-  height: 42em;
+  height: 40em;
+}
+.home-layout section#intro h1 {
+  padding-top: 10px !important;
+}
+.textP{
 }
 .list-group-item.autoform-array-item > div {
   display: table;
@@ -19015,9 +19020,6 @@ h1 {
   background-size: contain !important;
 }
 
-.home-layout section#intro h1 {
-  padding-top: 100px;
-}
 
 @media (max-width: 768px) {
   .home-layout section#intro h1 {

@@ -1,16 +1,23 @@
 import React, {Component, PropTypes} from 'react';
+<<<<<<< HEAD
 
+=======
+import { Template } from 'meteor/templating';
+// Task component - represents a single todo item
+>>>>>>> cf365b32866369d8dea8fea40e0aa8e5fc44c59a
 export default class HomePage extends Component {
+
     render() {
+
         return (
-            <div className="home-layout">
+          <div className="home-layout">
             <section id="intro" className="colored text-center">
                 <div className="container">
-                    <div className="intro-well wow animated bounceIn">
+                    <div className="intro-well wow animated bounceIn" >
                         <div className="row">
                             <div className="col-lg-6 col-sm-6"></div>
-                            <div className="col-lg-6 col-sm-6">
-                                <h1>Esta plataforma esta diseñada para uso de todos los colombianos.</h1>
+                            <div className="col-lg-6 col-sm-6 textP" >
+                                <h1 className="textP">Esta plataforma esta diseñada para uso de todos los colombianos.</h1>
                                 <h2 className="hidden-xs">Analiza, descubre y denuncia</h2>
                             </div>
                         </div>
@@ -18,7 +25,7 @@ export default class HomePage extends Component {
                 </div>
             </section>
             <section id="how-it-works" className="text-center">
-                <div className="container wow fadeIn animated">
+                <div className="container wow fadeIn animated" >
                     <div className="row col-md-12">
                         <h3>¿Como funciona?</h3>
                         <h4>Queremos asegurar que los gastos asociados a los contratos de obras públicas sean legítimos. Esto se piensa lograr a través de la correcta verificación de los soportes de gastos que las empresas proveen a los interventores (es decir: verificar que las facturas de soporte sean acordes al plan estipulado en la propuesta del contrato y que las facturas no estén modificadas para cobrar más de lo que se necesite, use o gaste en el proyecto)</h4>
