@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import { Invoices } from '../api/invoices.js';
-
+import HomePage from './HomePage'
 import Invoice from './Invoice.jsx';
 import Accounts from './AccountsUIWrapper.jsx';
 
@@ -44,14 +44,14 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <Accounts />
         <header>
-          <h1>Invoices</h1>
-          <Accounts />
         </header>
 
         <div>
           {this.renderInvoices()}
         </div>
+        <HomePage/>
       </div>
     );
   }
