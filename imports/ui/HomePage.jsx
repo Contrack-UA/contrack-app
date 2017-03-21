@@ -4,7 +4,7 @@ import React, {Component, PropTypes} from 'react';
 export default class HomePage extends Component {
     render() {
         return (
-            <div name="home">
+            <div className="home-layout">
             <section id="intro" className="colored text-center">
                 <div className="container">
                     <div className="intro-well wow animated bounceIn">
