@@ -2,9 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import { Invoices } from '../api/invoices.js';
-import HomePage from './HomePage'
+import HomePage from './HomePage';
+import Navbar from './Navbar';
 import Invoice from './Invoice.jsx';
-import Accounts from './AccountsUIWrapper.jsx';
+
 
 // App component - represents the whole app
 class App extends Component {
@@ -44,7 +45,8 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Accounts />
+        <Navbar/>
+
         <header>
         </header>
 

@@ -13,7 +13,6 @@ export default class HomePage extends Component {
                             <div className="col-lg-6 col-sm-6">
                                 <h1>Esta plataforma esta diseñada para uso de todos los colombianos.</h1>
                                 <h2 className="hidden-xs">Analiza, descubre y denuncia</h2>
-
                             </div>
                         </div>
                     </div>

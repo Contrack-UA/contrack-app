@@ -1,1 +1,137 @@
 /* CSS declarations go here */
+/* Views */
+h1{
+  font-weight: bold;
+}
+.navbar{
+  color: black !important;
+}
+#intro {
+  background: url(/img/contrack_grande.PNG) !important;
+  color: black !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  box-sizing: border-box;
+}
+
+.home-layout nav.navbar {
+  background: #d9d9d9;
+  width: 100%;
+  z-index: 1000;
+}
+
+.home-layout nav.navbar .link {
+  color: black !important;
+}
+
+.home-layout nav.navbar .link:hover {
+  background: inherit;
+  color: white;
+  text-decoration: none;
+}
+
+.home-layout nav.navbar .link.btn-hollow {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+}
+
+.home-layout nav.navbar ul.nav {
+  list-style: none;
+  padding-top: 2px;
+}
+
+.home-layout nav.navbar ul.nav > li {
+  padding-left: 10px;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.home-layout nav.navbar ul.nav > .dropdown {
+  padding-right: 0;
+}
+
+.home-layout nav.navbar ul.nav .open .dropdown-toggle {
+  background: none;
+  color: white;
+}
+#configure-login-service-dialog .new-section {
+     margin-top: 10px;
+}
+
+
+
+section {
+  display: block;
+}
+
+.home-layout section {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background-size: contain;
+  height: 10em;
+  width: 10em;
+}
+
+.home-layout section.colored {
+  background: #eeeeee;
+  color: black;
+}
+
+.home-layout section#intro {
+  background: url(/img/contrack_grande.PNG) !important;
+  color: black !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+}
+
+.home-layout section#intro h1 {
+  padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .home-layout section#intro h1 {
+    padding-top: 10px;
+  }
+}
+
+.home-layout section#intro a.btn {
+  margin-top: 10px;
+  color: white;
+}
+
+.home-layout section#how-it-works .fa {
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.home-layout section#how-it-works .icntitle {
+  font-size: 14px;
+}
+
+.home-layout section#ipad {
+  padding-bottom: 0 !important;
+  overflow-x: hidden;
+}
+
+.home-layout section#ipad h3 {
+  padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .home-layout section#ipad h3 {
+    padding-top: 0;
+  }
+}
+
+.home-layout section#ipad .btn {
+  margin: 20px auto 30px;
+}
+
+.home-layout section#final {
+  padding-bottom: 0;
+}
+
+.home-layout section#final .btn {
+  margin: 20px auto 30px;
+}
