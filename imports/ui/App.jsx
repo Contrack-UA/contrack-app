@@ -4,7 +4,7 @@ import { Projects } from '../api/projects.js';
 import HomePage from './HomePage';
 import Navbar from './Navbar';
 import Invoice from './Invoice.jsx';
-import Project from './Project.jsx';
+import Projects from './Projects.jsx';
 
 
 // App component - represents the whole app
@@ -13,9 +13,11 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: 'home'
+      status: 'home',
+      page:1
     }
     this.goProjects = this.goProjects.bind(this);
+    this.changePage = this.changePage.bind(this);
   }
 
   renderComponent() {
@@ -25,7 +27,7 @@ export default class App extends Component {
       );
     } else {
       return (
-        <Project/>
+        <Projects page={this.state.page} changePage={this.changePage}/>
       );
     }
   }
@@ -35,6 +37,9 @@ export default class App extends Component {
   }
   goHome() {
     this.setState({status:'home'});
+  }
+  changePage(var i){
+    this.setState({page:i});
   }
 
   render() {
