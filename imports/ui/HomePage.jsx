@@ -1,10 +1,6 @@
 import React, {Component, PropTypes} from 'react';
-<<<<<<< HEAD
-
-=======
 import { Template } from 'meteor/templating';
-// Task component - represents a single todo item
->>>>>>> cf365b32866369d8dea8fea40e0aa8e5fc44c59a
+
 export default class HomePage extends Component {
 
     render() {
