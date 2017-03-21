@@ -15,24 +15,32 @@ export default class App extends Component {
     this.state = {
       status: 'home'
     }
+    this.goProjects = this.goProjects.bind(this);
   }
 
   renderComponent() {
-    if(this.state.status == 'home') {
+    if(this.state.status === 'home') {
       return (
-        <HomePage />
+        <HomePage goProjects={this.goProjects} />
       );
     } else {
       return (
-        <p>Holaaaa</p>
+        <Project/>
       );
     }
+  }
+
+  goProjects() {
+    this.setState({status:'projects'});
+  }
+  goHome() {
+    this.setState({status:'home'});
   }
 
   render() {
     return (
       <div className="container">
-        <HomePage/>
+        {this.renderComponent()}
       </div>
     );
   }

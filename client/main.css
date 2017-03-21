@@ -1,5 +1,9 @@
 @import url("//fonts.googleapis.com/css?family=Lato:300,400,700,300italic");
 
+a { 
+  cursor: pointer;
+}
+
 #intro{
   height: 40em;
 }

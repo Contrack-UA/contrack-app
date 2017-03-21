@@ -3,6 +3,11 @@ import { Template } from 'meteor/templating';
 import Accounts from './AccountsUIWrapper.jsx';
 
 export default class HomePage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
 
   render() {
 
@@ -18,7 +23,7 @@ export default class HomePage extends Component {
                   <h1 className="textP">Esta plataforma está diseñada para uso de todos los colombianos.</h1>
                   <h2 className="hidden-xs">Analiza, descubre y denuncia</h2>
                   <Accounts /><br/>
-                  <p>Si no tienes cuenta, ve directamente a <a href="https://google.com">los proyectos</a></p>
+                  <p>Si no tienes cuenta, ve directamente a <a onClick={() => {this.props.goProjects()}}>los proyectos</a></p>
                 </div>
               </div>
             </div>
