@@ -20,6 +20,7 @@ export default class App extends Component {
     this.goProjects = this.goProjects.bind(this);
     this.changePage = this.changePage.bind(this);
     this.goInvoices = this.goInvoices.bind(this);
+    this.goHome = this.goHome.bind(this);
   }
 
   retrievePage(i){
@@ -47,7 +48,10 @@ export default class App extends Component {
       return this.renderInvoices(this.state.currentProject);
     } else if (this.state.status === 'projects') {
       return (
-        <Projects page={this.state.page} lista={this.state.pageL} changePage={this.changePage} goInvoices={this.goInvoices}/>
+        <Projects page={this.state.page}
+          lista={this.state.pageL} changePage={this.changePage}
+          goInvoices={this.goInvoices}
+          goHome={this.goHome}/>
       );
     } else {
       return (
@@ -76,7 +80,7 @@ export default class App extends Component {
   renderInvoices(project) {
     console.log("llega a crear invoices");
     return (
-      <Invoices project={project}/>
+      <Invoices project={project} goHome={this.goHome}/>
     )
   }
 

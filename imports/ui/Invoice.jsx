@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 import {Table} from 'react-bootstrap';
 
@@ -35,7 +36,7 @@ export default class Invoice extends Component {
           </tbody>
         </Table>
         {
-          //TODO delete button
+          Meteor.user?<button className="btn btn-sm">Delete</button>:<span></span>
         }
       </div>
     );
