@@ -38,7 +38,7 @@ export default class App extends Component {
   goHome() {
     this.setState({status:'home'});
   }
-  changePage(var i){
+  changePage(i){
     this.setState({page:i});
   }
 
