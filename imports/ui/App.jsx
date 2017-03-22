@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import { Projects } from '../api/projects.js';
 import HomePage from './HomePage';
 import Navbar from './Navbar';
 import Invoice from './Invoice.jsx';
