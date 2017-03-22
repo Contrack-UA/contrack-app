@@ -55,7 +55,8 @@ class Invoices extends Component {
 
   render() {
     return (
-      <div>
+      <div><div className="col-md-2"><i className="fa fa-home fa-3x" onClick={()=>{this.props.goHome()}}></i></div>
+      <div className="col-md-10">
         <h3>Facturas relacionadas a {this.props.project} </h3>
         {
           this.state.creating?(
@@ -82,7 +83,7 @@ class Invoices extends Component {
           )
         }
         {this.renderInvoices()}
-      </div>
+      </div></div>
     );
   }
 }
