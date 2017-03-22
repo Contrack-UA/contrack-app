@@ -9,6 +9,26 @@ a {
 #intro{
   height: 40em;
 }
+.proyectoInd{
+  width: 15em;
+  height: 15em;
+  display: block;
+  position: relative;
+}
+.proyectoInd::after{
+  content: "";
+  background-image: url("./img/folderBlue.png");
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .home-layout section#intro h1 {
   padding-top: 10px !important;
 }

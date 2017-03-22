@@ -16,7 +16,7 @@ export class Projects extends Component {
   render() {
     return (
       <div>
-        <br/><br/><br/>
+        <br/>
         <div className="row" id="matrizComponent">
           <div className="col-md-12" id='jumbo'>
           <Matriz lista={this.props.lista}/>

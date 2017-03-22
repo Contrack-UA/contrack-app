@@ -15,8 +15,7 @@ export class Project extends Component {
   render() {
     console.log("esta creando");
     return (
-        <div>
-            <img className="img-responsive" height="125" width="125" src="./img/folderBlue.png" alt=""/>
+        <div className="proyectoInd">
             <div>{this.props.project.documents[0].title}</div>
         </div>
     );
