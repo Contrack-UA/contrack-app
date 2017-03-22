@@ -1,14 +1,27 @@
 import React, { Component, PropTypes } from 'react';
+import Item from './Item.jsx'
 
 // Invoice component
 export default class Invoice extends Component {
+
+  renderItems() {
+    return this.props.inv.items.map((item) => {
+      <Item item={item}/>
+    });
+  }
+
   render() {
     return (
       <div>
-        <h3>By {this.props.inv.responsible}</h3>
-        {
-          this.props.inv.passes ? <p>Passes</p> : <p>Doesn't pass</p>
-        }
+        <h3>Factura de {this.props.inv.proyecto} del {this.props.inv.createdAt}</h3>
+        <table>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio registrado</th>
+          </tr>
+          {this.renderItems()}
+        </table>
       </div>
     );
   }
