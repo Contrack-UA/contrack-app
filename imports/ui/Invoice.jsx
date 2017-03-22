@@ -1,12 +1,16 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
+
 import {Table} from 'react-bootstrap';
 
 // Invoice component
-export default class Invoice extends Component {
+class Invoice extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+    };
   }
 
   render() {
@@ -36,7 +40,7 @@ export default class Invoice extends Component {
           </tbody>
         </Table>
         {
-          Meteor.user?<button className="btn btn-sm">Delete</button>:<span></span>
+          this.state.currentUser?(<button className="btn btn-sm">Delete</button>):(<span></span>)
         }
       </div>
     );
@@ -46,3 +50,9 @@ export default class Invoice extends Component {
 Invoice.propTypes = {
   inv: PropTypes.object.isRequired,
 };
+
+export default createContainer(() => {
+  return {
+    currentUser: Meteor.user()
+  };
+}, Invoice);
