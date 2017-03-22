@@ -82,8 +82,7 @@ export default class HomePage extends Component {
                 <ul className="text-left">
                   <li>Esteban Galán Zambrano</li>
                   <li>Margarita Gómez Ballén</li>
-                  <li>Nicolás Gómez González</li>
-                  <li>Jose Gabriel Tamula Lara</li>
+                  <li>Jose Gabriel Tamura Lara</li>
                 </ul>
                 <br/>
               </div>
