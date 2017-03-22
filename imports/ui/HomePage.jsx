@@ -26,6 +26,7 @@ export default class HomePage extends Component {
         <section id="how-it-works" className="text-center">
           <div className="container wow fadeIn animated" >
             <div className="row col-md-12">
+              <br/><br/>
               <h3>¿Cómo funciona?</h3>
               <h4 className="text-justify">Queremos asegurar que los gastos asociados a los contratos de obras públicas sean legítimos. Esto se piensa lograr a través de la correcta verificación de los soportes de gastos que las empresas proveen a los interventores (es decir: verificar que las facturas de soporte sean acordes al plan estipulado en la propuesta del contrato y que las facturas no estén modificadas para cobrar más de lo que se necesite, use o gaste en el proyecto)</h4>
             </div>
@@ -75,9 +76,9 @@ export default class HomePage extends Component {
         <section id="ipad" className="colored text-center">
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
-                <h3>¿Quienes somos?</h3>
-                <p>4 estudiantes de la universidad de los Andes que buscamos un mejor país</p>
+              <h3>¿Quienes somos?</h3>
+              <div className="col-md-5">
+                <p>4 estudiantes de la universidad de los Andes<br/>que buscamos un mejor país</p>
                 <ul className="text-left">
                   <li>Esteban Galán Zambrano</li>
                   <li>Margarita Gómez Ballén</li>
