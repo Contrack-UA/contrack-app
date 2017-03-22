@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
@@ -9,15 +10,22 @@ class Invoices extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      creating: false
+      creating: false,
+      totalValue: 0
     }
     this.renderInvoices = this.renderInvoices.bind(this);
-    this.createInvoice = this.createInvoice.bind(this);
+    this.changeCreating = this.changeCreating.bind(this);
   }
 
-  createInvoice() {
+  changeCreating() {
     this.setState({
-      creating: true
+      creating: !this.state.creating
+    })
+  }
+
+  changeValue(newVal) {
+    this.setState({
+      totalValue: newVal
     })
   }
 
@@ -50,7 +58,28 @@ class Invoices extends Component {
       <div>
         <h3>Facturas relacionadas a {this.props.project} </h3>
         {
-          //TODO add button
+          this.state.creating?(
+            <div>
+              <form>
+                <label>Valor total: </label>
+                <input type="number" placeholder="00" onChange={(event)=>{
+                  this.changeValue(event.target.value);
+                }}/>
+              </form>
+              <button className="btn btn-success" onClick={() => {
+                this.changeCreating()
+              }}>Guardar</button>
+              <button className="btn btn-danger" onClick={() => {
+                this.changeCreating()
+              }}>Cancelar</button>
+            </div>
+          ):(
+            <div>
+              <button className="btn btn-primary" onClick={() => {
+                this.changeCreating()
+              }}>Agregar</button>
+            </div>
+          )
         }
         {this.renderInvoices()}
       </div>
