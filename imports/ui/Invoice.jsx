@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import {Table} from 'react-bootstrap';
 
 // Invoice component
 export default class Invoice extends Component {
@@ -11,7 +12,7 @@ export default class Invoice extends Component {
     return (
       <div className={this.props.inv.passes?"passes":"fails"}>
         <h4>{this.props.inv.createdAt.toDateString()}</h4>
-        <table>
+        <Table hover>
           <thead>
           <tr className="text-center">
             <th>Producto</th>
@@ -32,7 +33,7 @@ export default class Invoice extends Component {
             })
           }
           </tbody>
-        </table>
+        </Table>
         {
           //TODO delete button
         }
