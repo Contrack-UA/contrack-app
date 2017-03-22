@@ -3,14 +3,8 @@ import { Template } from 'meteor/templating';
 import Accounts from './AccountsUIWrapper.jsx';
 
 export default class HomePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    }
-  }
 
   render() {
-
     return (
       <div className="home-layout">
         {new WOW().init()}
