@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import HomePage from './HomePage';
 import Navbar from './Navbar';
-import Invoice from './Invoice.jsx';
 import Projects from './Projects.jsx';
 
 
@@ -13,10 +12,12 @@ export default class App extends Component {
     super(props);
     this.state = {
       status: 'home',
-      page:1
+      page:1,
+      currentProject: ''
     }
     this.goProjects = this.goProjects.bind(this);
     this.changePage = this.changePage.bind(this);
+    this.goInvoices = this.goInvoices.bind(this);
   }
 
   renderComponent() {
@@ -24,7 +25,10 @@ export default class App extends Component {
       return (
         <HomePage goProjects={this.goProjects} />
       );
-    } else {
+    } else if (this.state.status == 'invoices') {
+      return renderInvoices(this.state.currentProject);
+    }
+    else {
       return (
         <Projects page={this.state.page} changePage={this.changePage}/>
       );
@@ -39,6 +43,17 @@ export default class App extends Component {
   }
   changePage(i){
     this.setState({page:i});
+  }
+  goInvoices(project){
+    this.setState({
+      status:'invoices',
+      currentProject: project
+    })
+  }
+  renderInvoices(project) {
+    return (
+      <Invoices project={project}/>
+    )
   }
 
   render() {

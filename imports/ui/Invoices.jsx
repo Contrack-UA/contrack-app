@@ -31,7 +31,7 @@ Invoices.propTypes = {
 };
 
 export default createContainer(() => {
-  var inv = Invoices.find({}, { sort: { createdAt: -1 } }).fetch();
+  var inv = Invoices.find({project: this.props.project}, { sort: { createdAt: -1 } }).fetch();
   return {
     invoices: inv,
   };
