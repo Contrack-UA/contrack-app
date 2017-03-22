@@ -18,9 +18,9 @@ class Matriz extends Component {
             {
               console.log(proy);
               return (
-                      <div className="col-md-4" key={i}>
-                          <Project project={proy}/>
-                      </div>
+                <div className="col-md-4" key={i}>
+                  <Project project={proy} onClick={this.props.goInvoices(proy.documents[0].title)}/>
+                </div>
               );
             }
           })

@@ -19,7 +19,7 @@ export class Projects extends Component {
         <br/>
         <div className="row" id="matrizComponent">
           <div className="col-md-12" id='jumbo'>
-          <Matriz lista={this.props.lista}/>
+          <Matriz lista={this.props.lista} goInvoices={this.props.goInvoices}/>
           </div>
         </div>
         <br/><br/>

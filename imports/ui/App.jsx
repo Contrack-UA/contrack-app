@@ -45,11 +45,14 @@ export default class App extends Component {
       );
     } else if (this.state.status == 'invoices') {
       return this.renderInvoices(this.state.currentProject);
-    }
-    else {
+    } else if (this.state.status == 'projects') {
       return (
-        <Projects page={this.state.page} lista={this.state.pageL} changePage={this.changePage}/>
+        <Projects page={this.state.page} lista={this.state.pageL} changePage={this.changePage} goInvoices={this.goInvoices}/>
       );
+    } else {
+      return (
+        <p>Hola</p>
+      )
     }
   }
 
