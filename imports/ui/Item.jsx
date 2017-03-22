@@ -11,13 +11,11 @@ export default class Item extends Component {
     console.log("Creando:");
     console.log(this.props.item);
     return (
-      <div>
         <tr>
           <td>{this.props.item.product}</td>
           <td>{this.props.item.quantity}</td>
           <td>{this.props.item.cost}</td>
         </tr>
-      </div>
     );
   }
 }
