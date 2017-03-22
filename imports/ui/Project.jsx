@@ -17,7 +17,7 @@ export class Project extends Component {
     return (
         <div>
             <img className="img-responsive" height="125" width="125" src="./img/folderBlue.png" alt=""/>
-            <div>{this.props.name}</div>
+            <div>{this.props.project.documents[0].title}</div>
         </div>
     );
   }

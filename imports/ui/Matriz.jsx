@@ -14,12 +14,15 @@ class Matriz extends Component {
       <div>
         {
           this.props.lista.map((proy,i) => {
-            console.log(proy);
-            return (
-                    <div className="col-md-3" key={i}>
-                        <Project name="hola"/>
-                    </div>
-            );
+            if(i<9)
+            {
+              console.log(proy);
+              return (
+                      <div className="col-md-4" key={i}>
+                          <Project project={proy}/>
+                      </div>
+              );
+            }
           })
         }
       </div>

@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import axios from 'axios';
 import Matriz from './Matriz.jsx';
+import Footer from './Footer.jsx';
 
 // Project component
 export class Projects extends Component {
@@ -43,12 +44,13 @@ export class Projects extends Component {
     }
     return (
       <div>
+        <br/><br/><br/>
         <div className="row">
           <div className="col-md-12" id='jumbo'>
           {matriz}
           </div>
         </div>
-        <div className="footer">{this.props.page}</div>
+        <Footer page={this.props.page} changePage={this.props.changePage}/>
       </div>
     );
   }
