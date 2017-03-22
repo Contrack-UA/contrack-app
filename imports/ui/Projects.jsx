@@ -45,11 +45,12 @@ export class Projects extends Component {
     return (
       <div>
         <br/><br/><br/>
-        <div className="row">
+        <div className="row" id="matrizComponent">
           <div className="col-md-12" id='jumbo'>
           {matriz}
           </div>
         </div>
+        <br/><br/>
         <Footer page={this.props.page} changePage={this.props.changePage}/>
       </div>
     );

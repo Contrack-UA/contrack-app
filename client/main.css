@@ -3,7 +3,9 @@
 a {
   cursor: pointer;
 }
-
+#matrizComponent{
+  text-align: center;
+}
 #intro{
   height: 40em;
 }

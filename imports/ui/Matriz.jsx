@@ -11,7 +11,7 @@ class Matriz extends Component {
   {
     console.log(this.props.lista);
     return(
-      <div>
+      <div >
         {
           this.props.lista.map((proy,i) => {
             if(i<9)
