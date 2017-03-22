@@ -56,6 +56,7 @@ class Invoices extends Component {
   render() {
     return (
       <div className="row">
+        <br/><br/>
       <div className="col-md-1"><i className="fa fa-home fa-3x" onClick={()=>{this.props.goHome()}}></i></div>
       <div className="col-md-10">
         <h3>Facturas relacionadas a {this.props.project} </h3>
