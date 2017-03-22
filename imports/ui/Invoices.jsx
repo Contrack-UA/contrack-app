@@ -49,6 +49,9 @@ class Invoices extends Component {
     return (
       <div>
         <h3>Facturas relacionadas a {this.props.project} </h3>
+        {
+          //TODO add button
+        }
         {this.renderInvoices()}
       </div>
     );
