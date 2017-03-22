@@ -43,9 +43,9 @@ export default class App extends Component {
       return (
         <HomePage goProjects={this.goProjects} />
       );
-    } else if (this.state.status == 'invoices') {
+    } else if (this.state.status === 'invoices') {
       return this.renderInvoices(this.state.currentProject);
-    } else if (this.state.status == 'projects') {
+    } else if (this.state.status === 'projects') {
       return (
         <Projects page={this.state.page} lista={this.state.pageL} changePage={this.changePage} goInvoices={this.goInvoices}/>
       );
@@ -57,6 +57,7 @@ export default class App extends Component {
   }
 
   goProjects() {
+    console.log("GO PROJECTS");
     this.setState({status:'projects'});
   }
   goHome() {
