@@ -4,18 +4,32 @@ import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import Matriz from './Matriz.jsx';
 import Footer from './Footer.jsx';
+import {FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 
 // Project component
 export class Projects extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      searchValue:''
     }
+  }
+
+  handleChange(e){
+    this.setState({searchValue: e.target.value});
   }
 
   render() {
     return (
       <div>
+        <div className="row">
+          <form>
+            <FormGroup controlId="formBasicText">
+              <ControlLabel>Busca un contrato</ControlLabel>
+              <FormControl type="text" value={this.state.searchValue} placeholder="IDContrato" onChange={this.handleChange}/>
+            </FormGroup>
+          </form>
+        </div>
         <br/>
         <div className="row" id="matrizComponent">
           <div className="col-md-12" id='jumbo'>
