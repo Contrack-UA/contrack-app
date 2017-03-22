@@ -13,7 +13,11 @@ export default class Invoice extends Component {
     console.log("Items a crear:");
     console.log(this.props.inv.items);
     return this.props.inv.items.map((item) => {
-      <Item item={item}/>
+      <tr>
+        <td>{item.product}</td>
+        <td>{item.quantity}</td>
+        <td>{item.cost}</td>
+      </tr>
     });
   }
 
@@ -30,12 +34,9 @@ export default class Invoice extends Component {
           </tr>
           </thead>
           <tbody>
-            {/* {this.renderItems()} */}
-            {
-              this.props.inv.items.map((item) => {
-                <Item item={item}/>
-              })
-            }
+          {
+            this.renderItems();
+          }
           </tbody>
         </table>
         {
