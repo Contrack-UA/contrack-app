@@ -38,7 +38,7 @@ export default class HomePage extends Component {
                   <i className="fa fa-folder fa-3x"></i>
                 </div>
                 <h1 className="icntitle">1. Registros</h1>
-                <p className="icnp text-justify">Tenemos registro de todos los contratos de obras públicas en Colombia, incluyendo presupuesto, fecha de inicio y fin, estado del proyecto, etc (recuperados de Colombia compra eficiente)
+                <p className="icnp text-justify">Tenemos registro de todos los contratos de obras públicas en Colombia, incluyendo presupuesto, fecha de inicio y fin, estado del proyecto, etc (recuperados de Colombia compra eficiente)</p>
               </div>
               <div className="col-md-3 wow fadeInUp animated" data-wow-delay="0.8s">
                 <div className="iconbox">
