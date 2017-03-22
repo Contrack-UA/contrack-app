@@ -67,12 +67,14 @@ export default class App extends Component {
     this.retrievePage(i);
   }
   goInvoices(project){
+    console.log("llega el llamado invoices");
     this.setState({
       status:'invoices',
       currentProject: project
-    })
+    });
   }
   renderInvoices(project) {
+    console.log("llega a crear invoices");
     return (
       <Invoices project={project}/>
     )

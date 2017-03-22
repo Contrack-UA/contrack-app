@@ -28,7 +28,7 @@ export class Project extends Component {
     var amount = this.props.project.value.amount;
     amount = this.formatMoney(amount,"'",',');
     return (
-        <div className="proyectoInd">
+        <div className="proyectoInd" onClick={()=>{this.props.goInvoices(this.props.project.documents[0].title)}}>
           <br/><br/><br/><br/>
             <div className="tituloP">
               {title}
