@@ -22,13 +22,20 @@ export class Projects extends Component {
   render() {
     return (
       <div>
+      <br/>
         <div className="row">
-          <form>
-            <FormGroup controlId="formBasicText">
-              <ControlLabel>Busca un contrato</ControlLabel>
-              <FormControl type="text" value={this.state.searchValue} placeholder="IDContrato" onChange={this.handleChange}/>
-            </FormGroup>
-          </form>
+          <div className="col-md-1"></div>
+          <div className="col-md-1">
+            <i className="fa fa-home fa-3x"></i>
+          </div>
+          <div className="col-md-10">
+            <form>
+              <FormGroup controlId="formBasicText">
+                <ControlLabel>Busca un contrato</ControlLabel>
+                <FormControl type="text" value={this.state.searchValue} placeholder="IDContrato" onChange={this.handleChange}/>
+              </FormGroup>
+            </form>
+          </div>
         </div>
         <br/>
         <div className="row" id="matrizComponent">
