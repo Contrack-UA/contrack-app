@@ -3,6 +3,7 @@ import HomePage from './HomePage';
 import Navbar from './Navbar';
 import Projects from './Projects.jsx';
 import Invoices from './Invoices.jsx';
+
 import axios from 'axios';
 
 // App component - represents the whole app
@@ -74,7 +75,7 @@ export default class App extends Component {
   }
 
   render() {
-    if(this.state.pageL.length ===0)
+    if(this.state.pageL.length === 0)
     {
       this.retrievePage(1);
     }
