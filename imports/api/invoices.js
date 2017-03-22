@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
-export const Invoices = new Mongo.Collection('invoices');
+export const InvCollection = new Mongo.Collection('invoices');
 
 Meteor.methods({
   'invoices.insert'(text) {

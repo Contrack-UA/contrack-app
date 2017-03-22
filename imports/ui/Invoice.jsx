@@ -4,7 +4,14 @@ import Item from './Item.jsx'
 // Invoice component
 export default class Invoice extends Component {
 
+  constructor(props) {
+    super(props);
+    this.renderItems = this.renderItems.bind(this);
+  }
+
   renderItems() {
+    console.log("Items a crear:");
+    console.log(this.props.inv.items);
     return this.props.inv.items.map((item) => {
       <Item item={item}/>
     });
@@ -12,16 +19,28 @@ export default class Invoice extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Factura de {this.props.inv.proyecto} del {this.props.inv.createdAt}</h3>
+      <div className={this.props.inv.passes?"passes":"fails"}>
+        <h4>{this.props.inv.createdAt.toDateString()}</h4>
         <table>
-          <tr>
+          <thead>
+          <tr className="text-center">
             <th>Producto</th>
             <th>Cantidad</th>
             <th>Precio registrado</th>
           </tr>
-          {this.renderItems()}
+          </thead>
+          <tbody>
+            {/* {this.renderItems()} */}
+            {
+              this.props.inv.items.map((item) => {
+                <Item item={item}/>
+              })
+            }
+          </tbody>
         </table>
+        {
+          //TODO delete button
+        }
       </div>
     );
   }
