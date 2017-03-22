@@ -1,20 +1,37 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
+
 
 // Project component
-export default class Project extends Component {
+export class Project extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
+
   render() {
+    console.log("esta creando");
     return (
-      <div>
-        <div class="col-md-3 portfolio-item">
-            <a href="#">
-                <img class="img-responsive" height="125" width="125" src="./images/fileBlue.png" alt=""/>
-            </a>
+        <div>
+            <img className="img-responsive" height="125" width="125" src="./img/folderBlue.png" alt=""/>
+            <div>{this.props.name}</div>
         </div>
-      </div>
     );
   }
 }
 
 Project.propTypes = {
-  proj: PropTypes.object.isRequired,
+  /**projects: PropTypes.array.isRequired,*/
+  currentUser: PropTypes.object,
 };
+
+export default createContainer(() => {
+  return {
+    /**Todo esto llega por props*/
+    /*projects: Proyectos.find({}, { sort: { createdAt: -1 } }).fetch(),*/
+    currentUser: Meteor.user(),
+  };
+}, Project);
