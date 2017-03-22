@@ -14,9 +14,9 @@ class Footer extends Component {
       <div className="footer">
         <div className="row">
           <div className="col-md-4"></div>
-          <div className="col-md-1"><button onClick={()=> {this.props.changePage(anterior)}}><</button></div>
+          <div className="col-md-1"><button onClick={()=> {this.props.changePage(anterior)}}>Prev</button></div>
           <div className="col-md-2"><h4>Pagina {this.props.page} de 259824</h4></div>
-          <div className="col-md-1"><button onClick={()=> {this.props.changePage(siguiente)}}><</button></div>
+          <div className="col-md-1"><button onClick={()=> {this.props.changePage(siguiente)}}>Sig</button></div>
           <div className="col-md-4"></div>
         </div>
       </div>
