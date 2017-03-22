@@ -11,13 +11,22 @@ export class Project extends Component {
     this.state = {
     }
   }
+  formatMoney (n, d, t){
+  var
+      d = d == undefined ? "." : d,
+      t = t == undefined ? "," : t,
+      s = n < 0 ? "-" : "$ ",
+      i = String(parseInt(n = Math.abs(Number(n) || 0))),
+      j = (j = i.length) > 3 ? j % 3 : 0;
+     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t);
+   };
 
   render() {
     console.log("esta creando");
     var title = this.props.project.documents[0].title;
     title = title.split(".")[0];
-    var amount = this.props.project.documents[0].title;
-    title = title.split(".")[0];
+    var amount = this.props.project.value.amount;
+    amount = this.formatMoney(amount,"'",',');
     return (
         <div className="proyectoInd">
           <br/><br/><br/><br/>
@@ -25,7 +34,7 @@ export class Project extends Component {
               {title}
             </div>
             <div className="value">
-              Costo total: {this.props.project.value.amount}
+              Costo total: {amount}
             </div>
             <div className="url">
               <a href={this.props.project.documents[0].url}>ver contrato completo aquí</a>
