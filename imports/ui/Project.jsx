@@ -14,9 +14,22 @@ export class Project extends Component {
 
   render() {
     console.log("esta creando");
+    var title = this.props.project.documents[0].title;
+    title = title.split(".")[0];
+    var amount = this.props.project.documents[0].title;
+    title = title.split(".")[0];
     return (
         <div className="proyectoInd">
-            <div>{this.props.project.documents[0].title}</div>
+          <br/><br/><br/><br/>
+            <div className="tituloP">
+              {title}
+            </div>
+            <div className="value">
+              Costo total: {this.props.project.value.amount}
+            </div>
+            <div className="url">
+              <a href={this.props.project.documents[0].url}>ver contrato completo aquí</a>
+            </div>
         </div>
     );
   }

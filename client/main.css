@@ -28,6 +28,16 @@ a {
   background-size: contain;
   background-repeat: no-repeat;
 }
+.tituloP{
+  font-weight: bold;
+  color:black;
+}
+.value{
+  color:red;
+}
+.url{
+  color:black;
+}
 
 .home-layout section#intro h1 {
   padding-top: 10px !important;
