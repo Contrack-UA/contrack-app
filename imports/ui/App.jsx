@@ -12,7 +12,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: 'home',
+      status: 'invoices',
       page:1,
       currentProject: 'prueba'
     } // Cambiar status a invoices para ver las facturas
