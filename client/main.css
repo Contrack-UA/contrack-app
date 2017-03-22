@@ -1,6 +1,6 @@
 @import url("//fonts.googleapis.com/css?family=Lato:300,400,700,300italic");
 
-a { 
+a {
   cursor: pointer;
 }
 
@@ -19349,4 +19349,28 @@ footer ul li {
 
 .red-font {
   color: rgb(152, 21, 21);
+}
+
+.fails {
+  background-color: rgba(152, 21, 21, 0.7);
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+}
+
+.passes {
+  background-color: rgba(46, 119, 17, 0.7);
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+}
+
+table, th, td {
+  margin: 5px;
+  border: 1px solid black;
+  text-align: center !important;
+}
+
+table {
+  width: 100%;
 }

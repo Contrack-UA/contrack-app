@@ -8,15 +8,18 @@ export default class Item extends Component {
   }
 
   render() {
+    console.log("Creando:");
+    console.log(this.props.item);
     return (
-      <tr>
-        <td>{this.props.item.product}</td>
-        <td>{this.props.item.quantity}</td>
-        <td>{this.props.item.cost}</td>
-      </tr>
+      <div>
+        <tr>
+          <td>{this.props.item.product}</td>
+          <td>{this.props.item.quantity}</td>
+          <td>{this.props.item.cost}</td>
+        </tr>
+      </div>
     );
   }
-
 }
 
 Item.propTypes = {

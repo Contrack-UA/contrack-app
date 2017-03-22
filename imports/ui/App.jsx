@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import HomePage from './HomePage';
 import Navbar from './Navbar';
 import Projects from './Projects.jsx';
+import Invoices from './Invoices.jsx';
 
 
 // App component - represents the whole app
@@ -13,8 +14,8 @@ export default class App extends Component {
     this.state = {
       status: 'home',
       page:1,
-      currentProject: ''
-    }
+      currentProject: 'prueba'
+    } // Cambiar status a invoices para ver las facturas
     this.goProjects = this.goProjects.bind(this);
     this.changePage = this.changePage.bind(this);
     this.goInvoices = this.goInvoices.bind(this);
@@ -26,7 +27,7 @@ export default class App extends Component {
         <HomePage goProjects={this.goProjects} />
       );
     } else if (this.state.status == 'invoices') {
-      return renderInvoices(this.state.currentProject);
+      return this.renderInvoices(this.state.currentProject);
     }
     else {
       return (
