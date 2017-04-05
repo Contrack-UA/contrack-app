@@ -24,7 +24,7 @@ export class Project extends Component {
   render() {
     console.log("esta creando");
     let project = this.props.project;
-    var title = project.tender.title;
+    var title = project.tender.description;
     title = title.toLowerCase();
 
     console.log(title);
@@ -33,7 +33,7 @@ export class Project extends Component {
 
     var amount =-1;
     if(project.planning){
-      amount = project.planning.budget.amount;
+      amount = project.planning.budget.amount.amount;
     }
     else if(project.awards[0].value.amount){
       amount = project.awards[0].value.amount;
@@ -51,7 +51,7 @@ export class Project extends Component {
               Costo total: {amount}
             </div>
             <div className="url">
-              <a href={project.uri}>ver contrato completo y documentos aquí</a>
+              <a  target="_blank"  href={project.uri}>ver contrato completo y documentos aquí</a>
             </div>
         </div>
     );
