@@ -20,7 +20,7 @@ export default class Navigbar extends Component {
                     <Navbar.Collapse>
                             <Nav className="bod">
                               <NavDropdown eventKey={2} title="SECOP I">
-                                <LinkContainer to="/contratos">
+                                <LinkContainer to="/secop1/contratos">
                                   <MenuItem eventKey={2.1}>Contratos</MenuItem>
                                 </LinkContainer>
                                 <LinkContainer to="/secop1/graf">
@@ -35,8 +35,8 @@ export default class Navigbar extends Component {
                                   <MenuItem eventKey={2.2}>Gráficas</MenuItem>
                                 </LinkContainer>
                               </NavDropdown>
-                              <LinkContainer to="/nosotros">
-                                <NavItem eventKey={4}>Nosotros</NavItem>
+                              <LinkContainer to="/contratos">
+                                <NavItem eventKey={4}>Antes</NavItem> 
                               </LinkContainer>
                             </Nav>
                         <Nav pullRight>
