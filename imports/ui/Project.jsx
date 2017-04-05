@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
-
+import { Thumbnail } from 'react-bootstrap';
 
 // Project component
 export class Project extends Component {
@@ -42,7 +42,7 @@ export class Project extends Component {
 
     amount = this.formatMoney(amount,"'",',');
     return (
-        <div className="proyectoInd">
+        <Thumbnail>
           <br/><br/><br/><br/>
             <div className="tituloP">
               {title}
@@ -53,7 +53,7 @@ export class Project extends Component {
             <div className="url">
               <a  target="_blank"  href={project.uri}>ver contrato completo y documentos aquí</a>
             </div>
-        </div>
+        </Thumbnail>
     );
   }
 }
