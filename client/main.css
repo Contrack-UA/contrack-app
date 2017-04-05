@@ -47,6 +47,28 @@
 .minilogo{
   width: 11em;
 }
+
+/*Contratos*/
+.verygood{
+  color: #7bf010;
+}
+
+.good{
+  color: #f9e613;
+}
+
+.bad{
+  color: #ff7300;
+}
+
+.verybad{
+  color: #ff2702;
+}
+
+.superbad{
+  color: #860d00;
+}
+
 /*Tamu*/
 
 #matrizComponent{
