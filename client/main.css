@@ -4,6 +4,21 @@
   /*border-style: solid;*/
 }
 
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+    background-color: #2e6da4;
+    background-image: linear-gradient(to bottom,#8cb534 0,#7da12f 100%) !important;
+  }
+
+.hola{}
+
+.green{
+  color: rgb(125, 161, 47);
+}
+
+.grey{
+  color: rgb(65, 65, 65);
+}
+
 .head{
   font-family: 'PT Sans Narrow', sans-serif;
 }
@@ -16,17 +31,24 @@
   font-weight: bold;
 }
 
-.logo{
-  width: 12em;
-}
-
 .center{
   text-align: center;
 }
 
-a {
-  cursor: pointer;
+/*Homepage*/
+.logo{
+  width: 12em;
 }
+
+.colombia{
+  width: 10em;
+}
+
+.minilogo{
+  width: 11em;
+}
+/*Tamu*/
+
 #matrizComponent{
   text-align: center;
 }
