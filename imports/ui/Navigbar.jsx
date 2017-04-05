@@ -10,9 +10,11 @@ export default class Navigbar extends Component {
       <div>
                 <Navbar className="navbar-inverse">
                     <Navbar.Header>
-                        <Navbar.Brand>
+                      <LinkContainer to="/">
+                        <Navbar.Brand eventKey={0}>
                             ConTrack
                         </Navbar.Brand>
+                      </LinkContainer>
                         <Navbar.Toggle/>
                     </Navbar.Header>
                     <Navbar.Collapse>
