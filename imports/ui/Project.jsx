@@ -25,9 +25,21 @@ export class Project extends Component {
     console.log("esta creando");
     let project = this.props.project;
     var title = project.tender.title;
-    title = title.toLowerCase();;
+    title = title.toLowerCase();
+
+    console.log(title);
+
     var status = project.tender.status;
-    var amount = project.planning.budget.amount;
+
+    var amount =-1;
+    if(project.planning){
+      amount = project.planning.budget.amount;
+    }
+    else if(project.awards[0].value.amount){
+      amount = project.awards[0].value.amount;
+    }
+    console.log(amount);
+
     amount = this.formatMoney(amount,"'",',');
     return (
         <div className="proyectoInd">
@@ -39,7 +51,7 @@ export class Project extends Component {
               Costo total: {amount}
             </div>
             <div className="url">
-              <a href={this.props.project.documents[0].url}>ver contrato completo aquí</a>
+              <a href={project.uri}>ver contrato completo y documentos aquí</a>
             </div>
         </div>
     );
