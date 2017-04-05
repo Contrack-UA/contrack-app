@@ -112,7 +112,7 @@ export default class Contracts2 extends Component {
                           </div>
                         ):(
                           <div>
-                            <h5><strong>No hay factores sospechosos</strong></h5>
+                            <h5><strong>No hay factores sospechosos </strong></h5>
                           </div>
                         )
                       }
