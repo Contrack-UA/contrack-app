@@ -85,6 +85,10 @@
     color: rgb(125, 161, 47) !important;
 }
 
+.graph{
+  width: 50em;
+}
+
 /*Tamu*/
 
 #matrizComponent{
