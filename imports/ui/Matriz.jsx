@@ -18,7 +18,7 @@ class Matriz extends Component {
             {
               console.log(proy);
               return (
-                <div className="col-md-4" key={i}>
+                <div className="col-md-6" key={i}>
                   <Project project={proy}/>
                 </div>
               );

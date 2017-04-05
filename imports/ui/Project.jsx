@@ -23,9 +23,11 @@ export class Project extends Component {
 
   render() {
     console.log("esta creando");
-    var title = this.props.project.documents[0].title;
-    title = title.split(".")[0];
-    var amount = this.props.project.value.amount;
+    let project = this.props.project;
+    var title = project.tender.title;
+    title = title.toLowerCase();;
+    var status = project.tender.status;
+    var amount = project.planning.budget.amount;
     amount = this.formatMoney(amount,"'",',');
     return (
         <div className="proyectoInd">

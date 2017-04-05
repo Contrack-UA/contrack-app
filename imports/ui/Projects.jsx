@@ -29,7 +29,7 @@ export default class Projects extends Component {
 
   //Page retriever
   retrievePage(i){
-    axios.get("http://datos.colombiacompra.gov.co:8000/releases/contract/?page="+i, {
+    axios.get("http://datos.colombiacompra.gov.co:8000/releases/?page="+i, {
     }).then(response => {
         console.log(response);
         if (response.data === null) {
@@ -43,7 +43,7 @@ export default class Projects extends Component {
   }
 
   render() {
-    console.log('holaaaaaaaa');
+    console.log('enter projects');
     return (
       <div>
       <br/>
