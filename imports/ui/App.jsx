@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HomePage from './HomePage';
-import Navbar from './Navbar';
+import Navigbar from './Navigbar';
 import Projects from './Projects.jsx';
 import Invoices from './Invoices.jsx';
 
