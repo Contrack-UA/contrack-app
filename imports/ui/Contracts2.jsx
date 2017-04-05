@@ -140,3 +140,8 @@ export default class Contracts2 extends Component {
       );
     }
   }
+
+
+
+
+  
