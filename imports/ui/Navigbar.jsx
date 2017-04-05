@@ -18,15 +18,18 @@ export default class Navigbar extends Component {
                         <Navbar.Toggle/>
                     </Navbar.Header>
                     <Navbar.Collapse>
-                            <Nav>
+                            <Nav className="bod">
                               <LinkContainer to="/contratos">
                                 <NavItem eventKey={1}>Contratos</NavItem>
                               </LinkContainer>
                               <LinkContainer to="/nosotros">
-                                <NavItem eventKey={2}>Nosotros</NavItem>
+                                <NavItem eventKey={2}>SECOP I</NavItem>
                               </LinkContainer>
-                              <LinkContainer to="/prox">
-                                  <NavItem eventKey={3}>Próximamente</NavItem>
+                              <LinkContainer to="/nosotros">
+                                <NavItem eventKey={3}>SECOP II</NavItem>
+                              </LinkContainer>
+                              <LinkContainer to="/nosotros">
+                                <NavItem eventKey={4}>Nosotros</NavItem>
                               </LinkContainer>
                             </Nav>
                         <Nav pullRight>
