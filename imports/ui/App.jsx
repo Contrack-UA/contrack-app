@@ -16,7 +16,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <div className="row">
+        <div className="row hola">
           <Navigbar />
         </div>
         <div className="row">

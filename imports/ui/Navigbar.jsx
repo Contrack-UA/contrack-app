@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
-import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import { Nav, Navbar, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 export default class Navigbar extends Component {
@@ -19,15 +19,22 @@ export default class Navigbar extends Component {
                     </Navbar.Header>
                     <Navbar.Collapse>
                             <Nav className="bod">
-                              <LinkContainer to="/contratos">
-                                <NavItem eventKey={1}>Contratos</NavItem>
-                              </LinkContainer>
-                              <LinkContainer to="/nosotros">
-                                <NavItem eventKey={2}>SECOP I</NavItem>
-                              </LinkContainer>
-                              <LinkContainer to="/nosotros">
-                                <NavItem eventKey={3}>SECOP II</NavItem>
-                              </LinkContainer>
+                              <NavDropdown eventKey={2} title="SECOP I">
+                                <LinkContainer to="/contratos">
+                                  <MenuItem eventKey={2.1}>Contratos</MenuItem>
+                                </LinkContainer>
+                                <LinkContainer to="/secop1/graf">
+                                  <MenuItem eventKey={2.2}>Gráficas</MenuItem>
+                                </LinkContainer>
+                              </NavDropdown>
+                              <NavDropdown eventKey={2} title="SECOP II">
+                                <LinkContainer to="/secop2/contratos">
+                                  <MenuItem eventKey={2.1}>Contratos</MenuItem>
+                                </LinkContainer>
+                                <LinkContainer to="/secop2/graf">
+                                  <MenuItem eventKey={2.2}>Gráficas</MenuItem>
+                                </LinkContainer>
+                              </NavDropdown>
                               <LinkContainer to="/nosotros">
                                 <NavItem eventKey={4}>Nosotros</NavItem>
                               </LinkContainer>
