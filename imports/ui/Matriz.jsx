@@ -19,7 +19,7 @@ class Matriz extends Component {
               console.log(proy);
               return (
                 <div className="col-md-4" key={i}>
-                  <Project project={proy} goInvoices={this.props.goInvoices}/>
+                  <Project project={proy}/>
                 </div>
               );
             }
