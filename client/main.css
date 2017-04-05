@@ -1,5 +1,17 @@
 @import url("//fonts.googleapis.com/css?family=Lato:300,400,700,300italic");
 
+.head{
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.bod{
+  font-family: 'Cabin', sans-serif;
+}
+
+.navbar-inverse {
+  border-radius: 0px !important;
+}
+
 a {
   cursor: pointer;
 }
