@@ -11,7 +11,7 @@ export default class Navigbar extends Component {
                 <Navbar className="navbar-inverse">
                     <Navbar.Header>
                       <LinkContainer to="/">
-                        <Navbar.Brand eventKey={0}>
+                        <Navbar.Brand className="head bold" eventKey={0}>
                             ConTrack
                         </Navbar.Brand>
                       </LinkContainer>
