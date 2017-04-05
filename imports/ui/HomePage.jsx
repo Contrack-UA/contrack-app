@@ -1,13 +1,11 @@
 import React, {Component, PropTypes} from 'react';
 import { Template } from 'meteor/templating';
-import Navigbar from './Navigbar.jsx';
 
 export default class HomePage extends Component {
 
   render() {
     return (
       <div className="home-layout">
-        <Navigbar />
         {new WOW().init()}
         <section id="intro" className="colored text-center">
           <div className="container">
@@ -17,7 +15,6 @@ export default class HomePage extends Component {
                 <div className="col-lg-6 col-sm-6 textP" >
                   <h1 className="textP">Esta plataforma está diseñada para uso de todos los colombianos.</h1>
                   <h2 className="hidden-xs">Analiza, descubre y denuncia</h2>
-                  <p>Si no tienes cuenta, ve directamente a <a onClick={() => {this.props.goProjects()}}>los proyectos</a></p>
                 </div>
               </div>
             </div>
