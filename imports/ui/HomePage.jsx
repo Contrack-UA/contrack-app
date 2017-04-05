@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Well} from 'react-bootstrap';
+import {Well, Thumbnail} from 'react-bootstrap';
 
 
 export default class HomePage extends Component {
@@ -18,38 +18,56 @@ export default class HomePage extends Component {
                 <br/>
                 <div className="row bod">
                   <div className="col-md-4">
-                    <Well>
-                      <h3 className="bold head center">Título</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                         dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                         mollit anim id est laborum.</p>
-                    </Well>
+                    <Thumbnail>
+                      <h3 className="head center">
+                        <i className="fa fa-search fa-2x" aria-hidden="true"></i> <br/>
+                        <strong className="green">Explora</strong> datos abiertos
+                      </h3>
+                      <p className="center">
+                        Contamos con registros de más de 30 mil contratos de obras públicas en Colombia extraídos del SECOP I y SECOP II.
+                      </p>
+                    </Thumbnail>
                   </div>
                   <div className="col-md-4">
-                    <Well>
-                      <h3 className="bold head center">Título</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                         dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                         mollit anim id est laborum.</p>
-                    </Well>
+                    <Thumbnail>
+                      <h3 className="head center">
+                        <i className="fa fa-line-chart fa-2x" aria-hidden="true"></i> <br/>
+                        <strong className="green">Filtra</strong> resultados
+                      </h3>
+                      <p className="center">
+                        Procuramos facilitar la revisión de contratos. Organiza los datos por los criterios disponibles y mira las gráficas disponibles.
+                      </p>
+                    </Thumbnail>
                   </div>
                   <div className="col-md-4">
-                    <Well>
-                      <h3 className="bold head center">Título</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                         dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                         mollit anim id est laborum.</p>
-                    </Well>
+                    <Thumbnail>
+                      <h3 className="head center">
+                        <i className="fa fa-check fa-2x" aria-hidden="true"></i> <br/>
+                        <strong className="green">Verifica</strong> estado de los contratos
+                      </h3>
+                      <p className="center">
+                        Manejamos una escala de colores para indicar características sospechosas que deberían ser revisadas por las entidades encargadas.
+                      </p>
+                    </Thumbnail>
                   </div>
+                </div>
+                <div className="row bod center">
+                  <Well>
+                    <div className="row">
+                      <div className="col-md-3">
+                        <img src="https://image.flaticon.com/icons/png/512/24/24331.png" className="colombia" />
+                      </div>
+                      <div className="col-md-6">
+                        <br/>
+                        <h1 className="head">
+                          Buscamos aportar a la transparencia en la ejecución de contratos en Colombia.
+                        </h1>
+                      </div>
+                      <div className="col-md-3">
+                        <img src="https://cheddargetter.com/marketing/img/metric_tracking_icon.png" className="minilogo" />
+                      </div>
+                    </div>
+                  </Well>
                 </div>
             </div>
         );
