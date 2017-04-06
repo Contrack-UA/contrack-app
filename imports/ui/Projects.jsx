@@ -29,7 +29,7 @@ export default class Projects extends Component {
 
   //Page retriever
   retrievePage(i){
-    axios.get("https://datos.colombiacompra.gov.co:8000/releases/?page="+i, {
+    axios.get("http://datos.colombiacompra.gov.co:8000/releases/?page="+i, {
     }).then(response => {
         console.log(response);
         if (response.data === null) {
