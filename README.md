@@ -1,7 +1,7 @@
 <img src="https://68.media.tumblr.com/7fad5ad226733c8604e9aa92e033b017/tumblr_onw1hqFxyO1w7ypfio1_1280.png" alt="ConTrack logo" width=240 />
 
 # Deployed app
-Check put the app [here](https://contrack.herokuapp.com/).
+Check out the app [here](https://contrack.herokuapp.com/).
 
 # About
 
