@@ -52,7 +52,8 @@ export default class mapColombia extends Component {
       }
       console.log(convert);
 
-      $('#colombia-map').vectorMap({
+    $(document).ready(function() {
+        $('#colombia-map').vectorMap({
           map: 'co_mill',
           backgroundColor: "transparent",
           regionStyle: {
@@ -83,7 +84,7 @@ export default class mapColombia extends Component {
               }
           }
       });
-      //this.setState({error:'no'});
+    });
   }
 
     render() {
