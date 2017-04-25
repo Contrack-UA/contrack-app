@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Well, Thumbnail} from 'react-bootstrap';
 import Navigbar from './Navigbar.jsx';
+
+import secop2 from '../data/secop2.json';
 //import manejoRegiones from '../../client/manejoRegiones.js'
 
 export default class mapColombia extends Component {
