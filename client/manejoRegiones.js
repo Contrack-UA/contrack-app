@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  console.log("dibujando mapa");
     var pozoSelecionado = undefined;
     var mapaPozos = [];
     var sensor = {
