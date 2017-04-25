@@ -35,8 +35,11 @@ export default class Navigbar extends Component {
                                   <MenuItem eventKey={3.2}>Gráficas</MenuItem>
                                 </LinkContainer>
                               </NavDropdown>
+                              <LinkContainer to="/mapColombia">
+                                <NavItem eventKey={4}>Mapa Colombia</NavItem>
+                              </LinkContainer>
                               <LinkContainer to="/contratos">
-                                <NavItem eventKey={4}>Antes</NavItem>
+                                <NavItem eventKey={5}>Antes</NavItem>
                               </LinkContainer>
                             </Nav>
                         <Nav pullRight>
