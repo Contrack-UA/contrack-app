@@ -68,8 +68,9 @@ export default class Explorer2 extends Component {
           <div className="row contratos bod">
             {
               secop2.filter((contract) => {
+                let value = parseInt(contract['Valor Contrato'].replace(/(\,|(\.00))/g, ''));
                 return contract.sospechosidad === this.state.sospechosidad
-                      && contract['Valor Contrato'].replace() >= this.state.precio
+                      && value >= this.state.precio
                       && contract['Entidad Compradora'].toLowerCase().includes(this.state.entidad.toLowerCase())
               }).map((contract) => {
                 var color = 'verygood';
@@ -85,7 +86,6 @@ export default class Explorer2 extends Component {
                 if(contract.sospechosidad === 4) {
                   color = 'superbad';
                 }
-                console.log(contract.sospechosidad + "  " + color);
                 return (
                   <div className='col-md-6'>
                     <Well>
