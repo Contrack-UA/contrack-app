@@ -93,7 +93,7 @@ export default class Contracts2 extends Component {
                       </p>
                       <p><strong>Valor del contrato: </strong>
                       {
-                        contract['Valor Contrato']
+                        '$' + contract['Valor Contrato']
                       }
                       </p>
                       {
@@ -140,8 +140,3 @@ export default class Contracts2 extends Component {
       );
     }
   }
-
-
-
-
-  
