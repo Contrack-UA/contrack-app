@@ -41,7 +41,7 @@ export default class Explorer1 extends Component {
             <Thumbnail>
               <div className="row">
                 <div className="col-md-4">
-                  <h2>Sospechosidad:</h2>
+                  <h2>Riesgo:</h2>
                   <h2>
                     <i className="fa fa-circle superbad" aria-hidden="true" onClick={() => {this.changeSospechosidad(4)}}></i>
                     {' '}

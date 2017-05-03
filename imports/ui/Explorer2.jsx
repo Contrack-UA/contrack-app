@@ -41,7 +41,7 @@ export default class Explorer2 extends Component {
             <Thumbnail>
               <div className="row">
                 <div className="col-md-4">
-                  <h2>Sospechosidad:</h2>
+                  <h2>Riesgo:</h2>
                   <h2>
                     <i className="fa fa-circle superbad" aria-hidden="true" onClick={() => {this.changeSospechosidad(4)}}></i>
                     {' '}
@@ -69,7 +69,7 @@ export default class Explorer2 extends Component {
             {
               secop2.filter((contract) => {
                 return contract.sospechosidad === this.state.sospechosidad
-                      && contract['Valor Contrato'] >= this.state.precio
+                      && contract['Valor Contrato'].replace() >= this.state.precio
                       && contract['Entidad Compradora'].toLowerCase().includes(this.state.entidad.toLowerCase())
               }).map((contract) => {
                 var color = 'verygood';
