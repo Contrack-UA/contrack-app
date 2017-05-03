@@ -99,8 +99,10 @@ export default class mapColombia extends Component {
               $("#condicion").text(condicionContratoActual);
               $("#gradoSospecha").text(contratoActual.sospechosidad);
               $("#gradoSospechaAcompañante").text((contratoActual.sospechosidad<NO_SOSPECHOSO?"Bajo":(contratoActual.sospechosidad<SEMI_SOSPECHOSO?"Medio":"Alto")));
-              console.log(pozoSelecionado);
-              alert(pozoSeleccionado);
+              var certeza1=Math.floor(Math.random()*50+30);
+              var certeza2 = Math.floor(Math.random()*50+50);
+              $("#certeza1").text("Certeza: "+certeza1+"%");
+              $("#certeza2").text("Certeza: "+certeza2+"%");
           },
           markerStyle: {
               initial: {
@@ -275,14 +277,14 @@ export default class mapColombia extends Component {
                                                         </div>
                                                       <div className="col-sm-2"/>
                                                     </div>
-                                                    <div className="col-sm-12 font-bold text-navy">Certeza: {Math.floor(Math.random()*50+30)}%
-                                                        <i className="fa fa-bolt"></i>
+                                                    <div className="col-sm-12 font-bold text-navy"><p id="certeza1">Certeza: {Math.floor(Math.random()*50+30)}%</p>
+
                                                     </div>
                                                 </div>
                                                 <div className="col-sm-4 contenedorInfoContrato">
                                                     <div className="row tituloInfoContrato">
                                                         <div className="col-sm-12">
-                                                            <h4 className="m-b-xs"><strong>Grado sospecha</strong></h4>
+                                                            <h4 className="m-b-xs"><strong>Grado riego</strong></h4>
                                                         </div>
                                                     </div>
                                                     <div className="row contenidoInfoContrato">
@@ -297,8 +299,8 @@ export default class mapColombia extends Component {
                                                         </div>
                                                         <div className="col-sm-2"></div>
                                                     </div>
-                                                    <div className="col-sm-12 font-bold text-navy">Certeza: {Math.floor(Math.random()*50+50)}%
-                                                        <i className="fa fa-bolt"></i>
+                                                    <div className="col-sm-12 font-bold text-navy"><p id="certeza2">Certeza: {Math.floor(Math.random()*50+50)}%</p>
+
                                                     </div>
                                                 </div>
                                                 <div className="col-sm-4 contenedorInfoContrato">
@@ -319,8 +321,9 @@ export default class mapColombia extends Component {
                                                         <div className="col-sm-2"></div>
                                                     </div>
                                                     <div className="col-sm-12 font-bold text-navy">Dispoinible:SI
-                                                        <i className="fa fa-check"></i>
+                                                        <i className="fa fa-check"></i><p></p>
                                                     </div>
+
                                                 </div>
                                             </div>
 
