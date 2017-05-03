@@ -85,6 +85,10 @@
     color: rgb(125, 161, 47) !important;
 }
 
+.graph{
+  width: 50em;
+}
+
 /*Tamu*/
 
 #matrizComponent{
@@ -115,4 +119,7 @@
 
 .red-font {
   color: rgb(152, 21, 21);
+}
+#colombia-map{
+  height: 25em;
 }

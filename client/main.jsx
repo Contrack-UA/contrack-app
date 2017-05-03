@@ -11,6 +11,8 @@ import Graphs1 from '../imports/ui/Graphs1.jsx';
 import Contracts2 from '../imports/ui/Contracts2.jsx';
 import Graphs2 from '../imports/ui/Graphs2.jsx';
 
+import mapColombia from '../imports/ui/mapColombia.jsx';
+
 Meteor.startup(() => {
   render(
   <Router history={browserHistory}>
@@ -21,6 +23,7 @@ Meteor.startup(() => {
       <Route path='secop1/graf' component={Graphs1}/>
       <Route path='secop2/contratos' component={Contracts2}/>
       <Route path='secop2/graf' component={Graphs2}/>
+      <Route path='mapColombia' component={mapColombia}/>
     </Route>
   </Router>, document.getElementById('render-target')
 );
