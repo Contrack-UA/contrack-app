@@ -133,11 +133,20 @@
   border-style: solid;
 }
 .tituloInfoContrato{
-  border-style: solid;
   text-align: center;
   font-weight: 700;
 }
 .contenidoInfoContrato{
   text-align: center;
-  height: 6em;
+  height: 6.5em;
+}
+#botonVerContrato:hover{
+  cursor: pointer;
+  background-color: gray;
+}
+#condicion{
+  padding-top: 0.5em;
+}
+.text-navy{
+  text-align: center;
 }

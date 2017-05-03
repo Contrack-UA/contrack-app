@@ -5,6 +5,8 @@ import Navigbar from './Navigbar.jsx';
 import secop2 from '../data/secop2.json';
 import lectorSecop1 from './lectorSecop1.js';
 
+const  NO_SOSPECHOSO =2;
+const  SEMI_SOSPECHOSO=4;
 //import manejoRegiones from '../../client/manejoRegiones.js'
 
 export default class mapColombia extends Component {
@@ -16,8 +18,8 @@ export default class mapColombia extends Component {
   }
   dibujar(){
     console.log("dibujando mapa");
-      var pozoSelecionado = undefined;
-      var mapaPozos = [];
+      var contratoActual = undefined;
+      var mapaContratos = [];
       var sensor = {
           _id: 0,
           avgTemp: 20,
@@ -48,15 +50,15 @@ export default class mapColombia extends Component {
         var msg = lectorSecop1.traerProximoLote();
         console.log(msg);
         for (var i = 0; i < msg.length; i++) {
-          mapaPozos[msg[i]._id] = msg[i];
+          mapaContratos[msg[i]._id] = msg[i];
             var color = undefined;
-            if (msg[i].sospechosidad < 3) {
+            if (msg[i].sospechosidad < NO_SOSPECHOSO) {
                 color = "green";
                 cuantosBien++;
-            } else if (msg[i].sospechosidad < 4) {
+            } else if (msg[i].sospechosidad < SEMI_SOSPECHOSO) {
                 color = "yellow";
                 cuantosMedio++;
-            } else if (msg[i].sospechosidad < 5) {
+            } else  {
                 color = "red";
                 cuantosMal++;
             }
@@ -89,15 +91,16 @@ export default class mapColombia extends Component {
           },
           markers: convert,
           onMarkerClick: function(event, index) {
-            console.log("undio click");
-              pozoSelecionado = map.params.main.markers[index].name;
-              var pozo = mapaPozos[pozoSelecionado];
-              //hasta aqui funciona perfecto
-              $('#infoPozo').text("pozo: " + pozoSelecionado);
-              $("#ener").text(pozo.lastPh);
-              $("#temp").text(pozo.lastTemp);
-              $("#barr").text(pozo.lastSal);
+            console.log("undio click a "+index);
+              contratoActual = mapaContratos[index];
+              console.log(contratoActual);
+              var condicionContratoActual = (contratoActual.sospechosidad<NO_SOSPECHOSO?"Bien":(contratoActual.sospechosidad<SEMI_SOSPECHOSO?"Riesgo":"Anormal"));
+              $('#infoContrato').text("Contrato id: " + contratoActual._id);
+              $("#condicion").text(condicionContratoActual);
+              $("#gradoSospecha").text(contratoActual.sospechosidad);
+              $("#gradoSospechaAcompañante").text((contratoActual.sospechosidad<NO_SOSPECHOSO?"Bajo":(contratoActual.sospechosidad<SEMI_SOSPECHOSO?"Medio":"Alto")));
               console.log(pozoSelecionado);
+              alert(pozoSeleccionado);
           },
           markerStyle: {
               initial: {
@@ -137,13 +140,14 @@ export default class mapColombia extends Component {
                                 <div className="col-lg-5">
                                     <div className="row">
                                         <Thumbnail className="col-lg-4 State">
-                                            <div className="data float-e-margins">
-                                                <div className="data-title">
-                                                    <span className="label label-success pull-right">Ahora Mismo</span>
-                                                    <h5 id="estadoPozos">Estado de Contratos</h5>
-                                                    <h4 id="total"></h4>
+                                            <div className="row data float-e-margins">
+                                                <div className="col-md-12 row data-title">
+                                                    <h5 className="col-md-8" id="estadoPozos">Estado de Contratos</h5>
+                                                    <h5 className="col-md-3" id="total"></h5>
                                                 </div>
-                                                <div className="data-content">
+                                                <br/><br/>
+                                                <div className="col-md-1"></div>
+                                                <div className="col-md-11 data-content">
                                                     <div>
                                                         <span>Bien</span>
                                                         <small className="pull-right" id="numBien"></small>
@@ -247,74 +251,75 @@ export default class mapColombia extends Component {
                                 </div>
 
                                 <div className="col-lg-6">
-                                    <div className="data">
+                                    <div className="row data">
                                         <div className="data-title">
-                                            <h5 id="infoPozo">Sensor : 58</h5>
+                                            <h4><strong>Información contrato seleccionado</strong></h4>
+                                            <h3 id="infoContrato">Seleccione un contrato del mapa.</h3>
                                         </div>
                                         <div className="data-content">
                                             <div className="row m-t-sm">
-                                                <div className="col-sm-4">
-                                                    <div className="row">
-                                                        <div className="col-sm-7">
-                                                            <h5 className="m-b-xs">Temperatura</h5>
-                                                        </div>
-                                                        <div className="col-sm-4">
-                                                            <span className="label label-info m-b-xs">Min</span>
+                                                <div className="col-sm-4 contenedorInfoContrato">
+                                                    <div className="row tituloInfoContrato">
+                                                        <div className="col-sm-12">
+                                                            <h4 className="m-b-xs"><strong>Condición</strong></h4>
                                                         </div>
                                                     </div>
-                                                    <div className="row">
-                                                        <div className="col-sm-3">
-                                                            <i className="wi wi-celsius fa-3x"></i>
+                                                    <div className="row contenidoInfoContrato">
+                                                      <br/>
+                                                        <div className="col-sm-2">
+                                                            <i className="fa fa-check-square-o fa-3x"></i>
                                                         </div>
-                                                        <div className="col-sm-9">
-                                                            <h1 id="temp" className="no-margins">25</h1>Celsius
+                                                        <div className="col-sm-2"/>
+                                                        <div className="col-sm-6">
+                                                          <h4 id="condicion" className="no-margins">Anormal</h4>
                                                         </div>
+                                                      <div className="col-sm-2"/>
                                                     </div>
-                                                    <div className="font-bold text-navy">98%
+                                                    <div className="col-sm-12 font-bold text-navy">Certeza: {Math.floor(Math.random()*50+30)}%
                                                         <i className="fa fa-bolt"></i>
                                                     </div>
                                                 </div>
-                                                <div className="col-sm-4">
-                                                    <div className="row">
-                                                        <div className="col-sm-8">
-                                                            <h5 className="m-b-xs">PH
-                                                            </h5>
-                                                        </div>
-                                                        <div className="col-sm-4">
-                                                            <span className="label label-info m-b-xs">Hora</span>
+                                                <div className="col-sm-4 contenedorInfoContrato">
+                                                    <div className="row tituloInfoContrato">
+                                                        <div className="col-sm-12">
+                                                            <h4 className="m-b-xs"><strong>Grado sospecha</strong></h4>
                                                         </div>
                                                     </div>
-                                                    <div className="row">
-                                                        <div className="col-sm-4">
-                                                            <i className="wi wi-windy fa-3x"></i>
+                                                    <div className="row contenidoInfoContrato">
+                                                      <br/>
+                                                      <div className="col-sm-2"></div>
+                                                        <div className="col-sm-2">
+                                                            <i className="fa fa-low-vision fa-3x"></i>
+                                                        </div>
+                                                        <div className="col-sm-6 unionFaContenido">
+                                                            <h1 id="gradoSospecha" className="no-margins">5</h1>
+                                                            <h6 id="gradoSospechaAcompañante">Alto</h6>
+                                                        </div>
+                                                        <div className="col-sm-2"></div>
+                                                    </div>
+                                                    <div className="col-sm-12 font-bold text-navy">Certeza: {Math.floor(Math.random()*50+50)}%
+                                                        <i className="fa fa-bolt"></i>
+                                                    </div>
+                                                </div>
+                                                <div className="col-sm-4 contenedorInfoContrato">
+                                                    <div className="row tituloInfoContrato">
+                                                        <div className="col-sm-12">
+                                                            <h4 className="m-b-xs"><strong>Ver contrato</strong></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div className="row contenidoInfoContrato" id="botonVerContrato">
+                                                      <br/>
+                                                      <div className="col-sm-2"></div>
+                                                        <div className="col-sm-2">
+                                                            <i className="fa fa-share fa-2x"></i>
                                                         </div>
                                                         <div className="col-sm-6">
-                                                            <h1 id="barr" className="no-margins">8.179</h1>0-14
+                                                            <h3 className="no-margins">Click aquí</h3>
                                                         </div>
+                                                        <div className="col-sm-2"></div>
                                                     </div>
-                                                    <div className="font-bold text-navy">98%
-                                                        <i className="fa fa-bolt"></i>
-                                                    </div>
-                                                </div>
-                                                <div className="col-sm-4">
-                                                    <div className="row">
-                                                        <div className="col-sm-8">
-                                                            <h5 className="m-b-xs">Salinidad</h5>
-                                                        </div>
-                                                        <div className="col-sm-1">
-                                                            <span className="label label-info m-b-xs">Hora</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="row">
-                                                        <div className="col-sm-3">
-                                                            <i className="wi wi-lightning fa-3x"></i>
-                                                        </div>
-                                                        <div className="col-sm-9">
-                                                            <h1 id="ener" className="no-margins">3%</h1>halinidad
-                                                        </div>
-                                                    </div>
-                                                    <div className="font-bold text-navy">3%
-                                                        <i className="fa fa-bolt"></i>
+                                                    <div className="col-sm-12 font-bold text-navy">Dispoinible:SI
+                                                        <i className="fa fa-check"></i>
                                                     </div>
                                                 </div>
                                             </div>
@@ -322,11 +327,12 @@ export default class mapColombia extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-6">
-                                    <div className="data float-e-margins">
+                                <div className="col-lg-1"/>
+                                <div className="col-lg-5">
+                                    <div className="row data float-e-margins">
                                         <div className="data-title">
-                                            <span className="label label-success pull-right">Hoy</span>
-                                            <h5>Generar Reporte</h5>
+                                            <span className="label label-success pull-right">Prueba esta nueva funcionalidad</span>
+                                            <h5><strong>Generar Reporte</strong></h5>
                                         </div>
                                         <div className="data-content">
                                             <div className="row">
@@ -411,6 +417,7 @@ export default class mapColombia extends Component {
                         </div>
                     </div>
                 </div>
+                <br/><br/><br/>
                 {this.dibujar()}
 
             </div>
