@@ -17,6 +17,7 @@ export default class mapColombia extends Component {
     };
   }
   dibujar(){
+    $('#colombia-map').empty();
     console.log("dibujando mapa");
       var contratoActual = undefined;
       var mapaContratos = [];
