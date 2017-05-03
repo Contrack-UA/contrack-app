@@ -1,6 +1,6 @@
 export default lectorSecop1 = { traerProximoLote: ejemplo }
 
-
+import secop2 from '../data/secop2.json';
 
 function ejemplo(){
   var listaContratos = [];
@@ -39,6 +39,18 @@ function ejemplo(){
     var sospechoso = Math.floor(Math.random()*5+1); //numero maximo= 5
     var nuevoContrato= {_id:h,lat:latitud,lon:longitud,sospechosidad:sospechoso }
     listaContratos.push(nuevoContrato);
+  }
+
+  return listaContratos;
+}
+
+
+
+function secop1(){
+  var listaContratos = [];
+  for(var h=0; h<secop2.length; h++){
+    var actual = secop2[h];
+    console.log(actual);
   }
 
   return listaContratos;
