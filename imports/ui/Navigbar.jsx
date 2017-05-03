@@ -26,6 +26,9 @@ export default class Navigbar extends Component {
                                 <LinkContainer to="/secop1/graf">
                                   <MenuItem eventKey={2.2}>Gráficas</MenuItem>
                                 </LinkContainer>
+                                <LinkContainer to="/secop1/exp">
+                                  <MenuItem eventKey={2.3}>Explorador</MenuItem>
+                                </LinkContainer>
                               </NavDropdown>
                               <NavDropdown eventKey={3} title="SECOP II" id="SECOP2">
                                 <LinkContainer to="/secop2/contratos">
@@ -33,6 +36,9 @@ export default class Navigbar extends Component {
                                 </LinkContainer>
                                 <LinkContainer to="/secop2/graf">
                                   <MenuItem eventKey={3.2}>Gráficas</MenuItem>
+                                </LinkContainer>
+                                <LinkContainer to="/secop2/exp">
+                                  <MenuItem eventKey={3.3}>Explorador</MenuItem>
                                 </LinkContainer>
                               </NavDropdown>
                               <LinkContainer to="/mapColombia">
