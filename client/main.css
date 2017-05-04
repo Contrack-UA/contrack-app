@@ -149,8 +149,8 @@
 #condicion{
   padding-top: 0;
 }
-Button{
-  width:125%;
+.btn {
+  width:125% !important;
   text-align: center;
 }
 .text-navy{
