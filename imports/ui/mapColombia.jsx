@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import {Well, Thumbnail} from 'react-bootstrap';
 import Navigbar from './Navigbar.jsx';
 import secop2 from '../data/secop2.json';
-import lectorSecop1 from './lectorSecop1.js';
+import lectorSecops from './lectorSecops.js';
 import {Button} from 'react-bootstrap';
 
 const  NO_SOSPECHOSO =2;
@@ -17,6 +17,7 @@ export default class mapColombia extends Component {
       error: '',
     };
   }
+
   dibujar(){
     $('#colombia-map').empty();
     console.log("dibujando mapa");
@@ -39,7 +40,7 @@ export default class mapColombia extends Component {
 
       for(var w=0;w<cuantosLotesDeObjetos;w++){
         //trae la proxima lista de contratos de tamaño n
-        var msg = lectorSecop1.traerProximoLote();
+        var msg = lectorSecops.traerProximoLote();
         console.log(msg);
         for (var i = 0; i < msg.length; i++) {
           mapaContratos[msg[i]._id] = msg[i];
@@ -60,7 +61,8 @@ export default class mapColombia extends Component {
                 ],
                 name: msg[i]._id,
                 style: {
-                    fill: color
+                    fill: color,
+                    r: 3
                 }
             };
             convert.push(n);
@@ -113,6 +115,7 @@ export default class mapColombia extends Component {
       $('#porcentajeMal').width((100*cuantosMal/total)+'%');
 
     });
+
   }
 
     render() {
