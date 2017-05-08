@@ -23,6 +23,7 @@ react-meteor-data
 fortawesome:fontawesome
 #ian:accounts-ui-bootstrap-3
 accounts-ui
+twbs:bootstrap
 accounts-password
 timmyg:wow
 tsega:skrollr
