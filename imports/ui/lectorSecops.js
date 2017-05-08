@@ -64,7 +64,17 @@ function secop2Lista(){
     var actual = secop1[h];
     //console.log(actual);
     var ubicacion = darLatitudLongitud(actual.nomEntidad.split(" - ")[0]);
-    var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:actual.sospechas.length }
+    var probabilidad = Math.random();
+    if(probabilidad< 0.1){
+      var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:((actual.sospechas.length) + 3) }
+    }
+    else if(probabilidad < 0.4){
+      var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:((actual.sospechas.length) + 1) }
+    }
+    else{
+      var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:actual.sospechas.length }
+    }
+
     listaContratos.push(nuevoContrato);
   }
 
@@ -93,7 +103,7 @@ hashDeUbicacion.TOLIMA = {lat:4.036196, long:-75.2846};
 hashDeUbicacion.CHOCO = {lat:5.850470, long:-76.989487};
 hashDeUbicacion.SUCRE = {lat:9.226238, long:-75.134365};
 hashDeUbicacion.VALLE = {lat:3.728399, long:-76.3986};
-hashDeUbicacion.SAN_ANDRES = {lat:12.929033,long: -73.903896};
+hashDeUbicacion.SAN_ANDRES = {lat:9.637922, long:-68.201103};
 hashDeUbicacion.BOGOTA = {lat:4.637292, long:-74.094128};
 hashDeUbicacion.RISARALDA = {lat:5.046769,long: -75.8959};
 hashDeUbicacion.NORTE_SANTANDER = {lat:7.858076, long:-73.112};

@@ -43,7 +43,7 @@ export default class mapColombia extends Component {
         var msg = lectorSecops.traerProximoLote();
         //console.log(msg);
         for (var i = 0; i < msg.length; i++) {
-          mapaContratos[msg[i]._id] = msg[i];
+          mapaContratos[i] = msg[i];
             var color = undefined;
             if (msg[i].sospechosidad < NO_SOSPECHOSO) {
                 color = "green";
@@ -85,8 +85,9 @@ export default class mapColombia extends Component {
           },
           markers: convert,
           onMarkerClick: function(event, index) {
-            console.log("undio click a "+index);
+              console.log("undio click al numero de contrato creado "+index);
               contratoActual = mapaContratos[index];
+
               console.log(contratoActual);
               var condicionContratoActual = (contratoActual.sospechosidad<NO_SOSPECHOSO?"Bien":(contratoActual.sospechosidad<SEMI_SOSPECHOSO?"Riesgo":"Anormal"));
               $('#infoContrato').text("Contrato id: " + contratoActual._id);
