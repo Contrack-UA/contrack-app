@@ -20,14 +20,14 @@ Meteor.startup(() => {
   <Router history={browserHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={HomePage} />
-      <Route path= 'contratos' component={Projects}/>
-      <Route path='secop1/contratos' component={Contracts1}/>
-      <Route path='secop1/graf' component={Graphs1}/>
-      <Route path='secop1/exp' component={Explorer1}/>
-      <Route path='secop2/contratos' component={Contracts2}/>
-      <Route path='secop2/graf' component={Graphs2}/>
-      <Route path='secop2/exp' component={Explorer2}/>
-      <Route path='mapColombia' component={mapColombia}/>
+      <Route path= 'contratos' component={Projects} />
+      <Route path='secop1/contratos' component={Contracts1} />
+      <Route path='secop1/graf' component={Graphs1} />
+      <Route path='secop1/exp' component={Explorer1} />
+      <Route path='secop2/contratos' component={Contracts2} />
+      <Route path='secop2/graf' component={Graphs2} />
+      <Route path='secop2/exp' component={Explorer2} />
+      <Route path='mapColombia' component={mapColombia} />
     </Route>
   </Router>, document.getElementById('render-target')
 );

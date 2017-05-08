@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Well, Thumbnail} from 'react-bootstrap';
-import Navigbar from './Navigbar.jsx';
 import secop2 from '../data/secop2.json';
 import lectorSecops from './lectorSecops.js';
 import {Button} from 'react-bootstrap';
