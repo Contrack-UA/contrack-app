@@ -60,7 +60,7 @@ function secop2Lista(){
     listaContratos.push(nuevoContrato);
   }*/
   //secop 1
-  for(var h=0; h<secop1.length; h++){
+  for(var h=0; h<secop1.length/3; h++){
     var actual = secop1[h];
     //console.log(actual);
     var ubicacion = darLatitudLongitud(actual.nomEntidad.split(" - ")[0]);
@@ -74,14 +74,272 @@ function secop2Lista(){
 
 var hashDeUbicacion = {};
 //5.976636, -76.462010   los puntos 0,0
-hashDeUbicacion.ANTIOQUIA = {lat: 5.976636,long:-76.462010}
+hashDeUbicacion.ANTIOQUIA = {lat:6.806400, long:-75.440282};
+hashDeUbicacion.ATLANTICO = {lat:10.520816,long: -74.915713};
+hashDeUbicacion.BOYACA = {lat:5.591937, long:-72.933646};
+hashDeUbicacion.CUNDINAMARCA = {lat:4.902002, long:-74.092450};
+hashDeUbicacion.HUILA = {lat:2.677304, long:-75.512959};
+hashDeUbicacion.CORDOBA = {lat:8.392530, long:-75.881543};
+hashDeUbicacion.PUTUMAYO = {lat:0.711504, long:-75.990106};
+hashDeUbicacion.MAGDALENA = {lat:10.231370,long: -74.317508};
+hashDeUbicacion.SANTANDER = {lat:6.704433, long:-73.374955};
+hashDeUbicacion.BOLIVAR = {lat:9.121455, long:-74.6113};
+hashDeUbicacion.CAUCA = {lat:2.351797, long:-76.7787};
+hashDeUbicacion.CESAR = {lat:9.846376, long:-73.443411};
+hashDeUbicacion.NARIÑO = {lat:1.566189, long:-77.870};
+hashDeUbicacion.CALDAS = {lat:5.349021, long:-75.340};
+hashDeUbicacion.GUAJIRA = {lat:11.505365, long:-72.447};
+hashDeUbicacion.TOLIMA = {lat:4.036196, long:-75.2846};
+hashDeUbicacion.CHOCO = {lat:5.850470, long:-76.989487};
+hashDeUbicacion.SUCRE = {lat:9.226238, long:-75.134365};
+hashDeUbicacion.VALLE = {lat:3.728399, long:-76.3986};
+hashDeUbicacion.SAN_ANDRES = {lat:12.929033,long: -73.903896};
+hashDeUbicacion.BOGOTA = {lat:4.637292, long:-74.094128};
+hashDeUbicacion.RISARALDA = {lat:5.046769,long: -75.8959};
+hashDeUbicacion.NORTE_SANTANDER = {lat:7.858076, long:-73.112};
+hashDeUbicacion.QUINDIO = {lat:4.452258, long:-75.708575};
+hashDeUbicacion.CAQUETA = {lat:1.235987, long:-74.0081};
+hashDeUbicacion.ARAUCA = {lat:6.531367, long:-70.8781};
+hashDeUbicacion.VICHADA = {lat:4.691161,long: -69.3910};
+hashDeUbicacion.CASANARE = {lat:5.451777, long:-71.7154};
+hashDeUbicacion.GUAVIARE = {lat:1.873596, long:-72.2179};
+hashDeUbicacion.META = {lat:3.331229, long:-73.0473};
+hashDeUbicacion.VAUPES = {lat:0.907636, long:-70.7632};
+hashDeUbicacion.GUAINIA = {lat:2.870789, long:-68.7510};
+
 
 function darLatitudLongitud(lugar){
-  if(lugar === 'ANTIOQUIA'){
-    var latitud = hashDeUbicacion.ANTIOQUIA.lat+(Math.random()*1.1);
-    var longitud= hashDeUbicacion.ANTIOQUIA.long+(Math.random()*2);
-    return {lati:latitud, longi: longitud};
-  }
+  var t = 2*Math.PI*Math.random();
+  var u = Math.random()+Math.random();
+  var r = u>1? 2-u : u;
+    if(lugar === 'ANTIOQUIA'){
+      var y = hashDeUbicacion.ANTIOQUIA.lat;
+      var x= hashDeUbicacion.ANTIOQUIA.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+   else if(lugar === 'ATLÁNTICO'){
+     var y = hashDeUbicacion.ATLANTICO.lat;
+     var x= hashDeUbicacion.ATLANTICO.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'BOYACÁ'){
+     var y = hashDeUbicacion.BOYACA.lat;
+     var x= hashDeUbicacion.BOYACA.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'CUNDINAMARCA'){
+     var y = hashDeUbicacion.CUNDINAMARCA.lat;
+     var x= hashDeUbicacion.CUNDINAMARCA.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'HUILA'){
+     var y = hashDeUbicacion.HUILA.lat;
+     var x= hashDeUbicacion.HUILA.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+
+   else if(lugar === 'CÓRDOBA'){
+     var y = hashDeUbicacion.CORDOBA.lat;
+     var x= hashDeUbicacion.CORDOBA.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'PUTUMAYO'){
+     var y = hashDeUbicacion.PUTUMAYO.lat;
+     var x= hashDeUbicacion.PUTUMAYO.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'MAGDALENA'){
+     var y = hashDeUbicacion.MAGDALENA.lat;
+     var x= hashDeUbicacion.MAGDALENA.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'SANTANDER'){
+     var y = hashDeUbicacion.SANTANDER.lat;
+     var x= hashDeUbicacion.SANTANDER.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'BOLÍVAR'){
+     var y = hashDeUbicacion.BOLIVAR.lat;
+     var x= hashDeUbicacion.BOLIVAR.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'CAUCA'){
+     var y = hashDeUbicacion.CAUCA.lat;
+     var x= hashDeUbicacion.CAUCA.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'CESAR'){
+     var y = hashDeUbicacion.CESAR.lat;
+     var x= hashDeUbicacion.CESAR.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'NARIÑO'){
+     var y = hashDeUbicacion.NARIÑO.lat;
+     var x= hashDeUbicacion.NARIÑO.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'CALDAS'){
+     var y = hashDeUbicacion.CALDAS.lat;
+     var x= hashDeUbicacion.CALDAS.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'LA GUAJIRA'){
+     var y = hashDeUbicacion.GUAJIRA.lat;
+     var x= hashDeUbicacion.GUAJIRA.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'TOLIMA'){
+     var y = hashDeUbicacion.TOLIMA.lat;
+     var x= hashDeUbicacion.TOLIMA.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+   else if(lugar === 'CHOCÓ'){
+     var y = hashDeUbicacion.CHOCO.lat;
+     var x= hashDeUbicacion.CHOCO.long;
+     latitud= r* Math.cos(t) +y;
+     longitud= r* Math.sin(t)+x;
+     return {lati:latitud, longi: longitud};
+   }
+    else if(lugar === 'VALLE DEL CAUCA'){
+      var y = hashDeUbicacion.VALLE.lat;
+      var x= hashDeUbicacion.VALLE.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'SUCRE'){
+      var y = hashDeUbicacion.SUCRE.lat;
+      var x= hashDeUbicacion.SUCRE.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'SAN ANDRÉS  PROVIDENCIA Y SANTA CATALINA'){
+      var y = hashDeUbicacion.SAN_ANDRES.lat;
+      var x= hashDeUbicacion.SAN_ANDRES.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'BOGOTÁ D.C.'){
+      var y = hashDeUbicacion.BOGOTA.lat;
+      var x= hashDeUbicacion.BOGOTA.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'RISARALDA'){
+      var y = hashDeUbicacion.RISARALDA.lat;
+      var x= hashDeUbicacion.RISARALDA.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'NORTE DE SANTANDER'){
+      var y = hashDeUbicacion.NORTE_SANTANDER.lat;
+      var x= hashDeUbicacion.NORTE_SANTANDER.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'QUINDÍO'){
+      var y = hashDeUbicacion.QUINDIO.lat;
+      var x= hashDeUbicacion.QUINDIO.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'CAQUETÁ'){
+      var y = hashDeUbicacion.CAQUETA.lat;
+      var x= hashDeUbicacion.CAQUETA.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'ARAUCA'){
+      var y = hashDeUbicacion.ARAUCA.lat;
+      var x= hashDeUbicacion.ARAUCA.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'VICHADA'){
+      var y = hashDeUbicacion.VICHADA.lat;
+      var x= hashDeUbicacion.VICHADA.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'CASANARE'){
+      var y = hashDeUbicacion.CASANARE.lat;
+      var x= hashDeUbicacion.CASANARE.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'GUAVIARE'){
+      var y = hashDeUbicacion.GUAVIARE.lat;
+      var x= hashDeUbicacion.GUAVIARE.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'META'){
+      var y = hashDeUbicacion.META.lat;
+      var x= hashDeUbicacion.META.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'VAUPÉS'){
+      var y = hashDeUbicacion.VAUPES.lat;
+      var x= hashDeUbicacion.VAUPES.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'GUAINÍA'){
+      var y = hashDeUbicacion.GUAINIA.lat;
+      var x= hashDeUbicacion.GUAINIA.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+
+   console.log("ubicacion no encontrada "+ lugar)
+
   var latitud = (Math.random()*3)+7; //entre 2.668223 y 6
   var longitud = -((Math.random()*2)+73);
   return {lati:latitud, longi: longitud};
