@@ -171,8 +171,7 @@ export default class mapColombia extends Component {
                                             </div>
                                         </Thumbnail>
                                         <div className="col-md-1"></div>
-                                        <Thumbnail className="col-lg-5 Emergencies">
-                                          <div className="row">
+                                          <div className="row col-lg-5 Emergencies bod">
                                             <div className="col-md-12 data-title bod">
                                                 <h5 id="infoContrato">Seleccione un contrato</h5>
                                             </div>
@@ -234,103 +233,17 @@ export default class mapColombia extends Component {
                                                             </div>
                                                             <div className="col-sm-2"></div></Button>
                                                         </div>
-                                                        <div className="col-sm-12 font-bold text-navy">Dispoinible
+                                                        <div className="col-sm-12 font-bold text-navy">Disponible
                                                             <i className="fa fa-check"></i><p></p>
                                                         </div>
                                                     </Well>
                                                 </div>
                                             </div>
                                           </div>
-                                        </Thumbnail>
                                     </div>
                                 </div>
                                 <br/><br/>
-                                <div className="col-lg-3"/>
-                                <div className="col-lg-6">
-                                    <div className="row data float-e-margins">
-                                        <div className="data-title">
-                                            <span className="label label-info pull-right">Prueba esta nueva funcionalidad</span>
-                                            <h5><strong>Generar Reporte</strong></h5>
-                                        </div>
-                                        <div className="data-content">
-                                            <div className="row">
-                                                <div className="col-lg-12">
-                                                    <button data-toggle="dropdown" className="btn btn-primary btn-block dropdown-toggle">Reporte por Zona
-                                                        <span className="caret"></span>
-                                                    </button>
-                                                    <ul className="dropdown-menu">
-                                                        <li>
-                                                            <a href="#" className="font-bold">Mensual</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" className="font-bold">Trimestral</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" className="font-bold">Semestral</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" className="font-bold">Anual</a>
-                                                        </li>
-                                                        <li className="divider"></li>
-                                                        <li>
-                                                            <a href="#">Más opciones</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="col-lg-12">
-                                                    <button data-toggle="dropdown" className="btn btn-default btn-block dropdown-toggle">Reporte por emergencia
-                                                        <span className="caret"></span>
-                                                    </button>
-                                                    <ul className="dropdown-menu">
-                                                        <li>
-                                                            <a href="#" className="font-bold">Mensual</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" className="font-bold">Trimestral</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" className="font-bold">Semestral</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" className="font-bold">Anual</a>
-                                                        </li>
-                                                        <li className="divider"></li>
-                                                        <li>
-                                                            <a href="#">Más opciones</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="col-lg-12">
-                                                    <button data-toggle="dropdown" className="btn btn-default btn-block dropdown-toggle">Reporte por sensor
-                                                        <span className="caret"></span>
-                                                    </button>
-                                                    <ul className="dropdown-menu">
-                                                        <li>
-                                                            <a href="#" className="font-bold">Mensual</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" className="font-bold">Trimestral</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" className="font-bold">Semestral</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" className="font-bold">Anual</a>
-                                                        </li>
-                                                        <li className="divider"></li>
-                                                        <li>
-                                                            <a href="#">Más opciones</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
