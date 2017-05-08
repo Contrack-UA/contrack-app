@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
+import ReactDOM from 'react-dom';
 import {Well} from 'react-bootstrap';
-
 
 export default class Graphs2 extends Component {
 
@@ -27,15 +27,11 @@ export default class Graphs2 extends Component {
       )
     } else if (this.state.graph === 1) {
       return (
-        <div className="scale bod bold center">
-          <h3>1 <strong> vs. </strong> 1</h3>
-        </div>
+        <div className="scale bod bold center"></div>
       )
     } else {
       return (
-        <div className="scale bod bold center">
-          <h3>2 <strong> vs. </strong> 2</h3>
-        </div>
+        <div className="scale bod bold center"></div>
       )
     }
 
