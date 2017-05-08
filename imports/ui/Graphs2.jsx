@@ -34,11 +34,11 @@ export default class Graphs1 extends Component {
               width={1200}
               height={400}
               data={top20}
-              margin={{top: 10, left: 60, right: 100, bottom: 50}}
+              margin={{top: 220, left: 100, right: 100, bottom: 50}}
               clickHandler={(d) => this.setState({dataDisplay: `${d.x}, tiene un valor de $ ${d.y}`})}
             />
           </div>
-          <div style={{display: 'inline-block', verticalAlign: 'top', paddingLeft: '20px'}}>
+          <div className="bod" style={{display: 'inline-block', verticalAlign: 'top', paddingLeft: '20px'}}>
             <h2>
               {this.state.dataDisplay ? this.state.dataDisplay : 'Haz click en una barra para ver la información'}
             </h2>
@@ -52,7 +52,6 @@ export default class Graphs1 extends Component {
         </div>
       )
     }
-
   }
 
   render(){

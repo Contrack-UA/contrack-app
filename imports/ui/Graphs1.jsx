@@ -39,7 +39,7 @@ export default class Graphs1 extends Component {
               clickHandler={(d) => this.setState({dataDisplay: `${d.x}, tiene un valor de $ ${d.y}`})}
             />
           </div>
-          <div style={{display: 'inline-block', verticalAlign: 'top', paddingLeft: '20px'}}>
+          <div className="bod" style={{display: 'inline-block', verticalAlign: 'top', paddingLeft: '20px'}}>
             <h2>
               {this.state.dataDisplay ? this.state.dataDisplay : 'Haz click en una barra para ver la información'}
             </h2>
