@@ -41,7 +41,7 @@ export default class mapColombia extends Component {
       for(var w=0;w<cuantosLotesDeObjetos;w++){
         //trae la proxima lista de contratos de tamaño n
         var msg = lectorSecops.traerProximoLote();
-        console.log(msg);
+        //console.log(msg);
         for (var i = 0; i < msg.length; i++) {
           mapaContratos[msg[i]._id] = msg[i];
             var color = undefined;
@@ -68,7 +68,7 @@ export default class mapColombia extends Component {
             convert.push(n);
         }
         //aquí ya estan todos los contratos a ser dibujados
-        console.log(convert);
+        //console.log(convert);
     }
     $(document).ready(function() {
         $('#colombia-map').vectorMap({
