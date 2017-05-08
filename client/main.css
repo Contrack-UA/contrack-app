@@ -127,26 +127,51 @@
   color: rgb(152, 21, 21);
 }
 #colombia-map{
-  height: 25em;
+  height: 30em;
 }
 .contenedorInfoContrato{
-  border-style: solid;
+  /**border-style: solid;*/
+  padding-top: 5px !important;
+}
+.data-title{
+  text-align: center;
 }
 .tituloInfoContrato{
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
 }
 .contenidoInfoContrato{
-  text-align: center;
-  height: 6.5em;
+  text-align: center !important;
 }
-#botonVerContrato:hover{
-  cursor: pointer;
-  background-color: gray;
+#gradoSospechaAcompañante{
+  padding-top: 0.2em;
 }
 #condicion{
-  padding-top: 0.5em;
+  padding-top: 0;
+}
+.btn {
+  width:125% !important;
+  text-align: center;
 }
 .text-navy{
   text-align: center;
+}
+.page-heading{
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.Emergencies{
+  height: 28em;
+}
+#cond, #check{
+  margin-top: -1em;
+}
+
+h4{
+  margin-top: 0 !important;
+}
+@media (min-width: 992px){
+.col-md-11 {
+    width: 100% !important;
+}
 }

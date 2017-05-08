@@ -3,7 +3,8 @@ import {render} from 'react-dom';
 import {Well, Thumbnail} from 'react-bootstrap';
 import Navigbar from './Navigbar.jsx';
 import secop2 from '../data/secop2.json';
-import lectorSecop1 from './lectorSecop1.js';
+import lectorSecops from './lectorSecops.js';
+import {Button} from 'react-bootstrap';
 
 const  NO_SOSPECHOSO =2;
 const  SEMI_SOSPECHOSO=4;
@@ -16,21 +17,13 @@ export default class mapColombia extends Component {
       error: '',
     };
   }
+
   dibujar(){
+    $('#colombia-map').empty();
     console.log("dibujando mapa");
       var contratoActual = undefined;
       var mapaContratos = [];
-      var sensor = {
-          _id: 0,
-          avgTemp: 20,
-          avgPh: 8,
-          avgSalt: 4,
-          lat: 6.544560,
-          lon: -70.019409,
-          lastTemp: 40,
-          lastPh: 8,
-          lastSal: 4
-      };
+
       //var msg = [sensor];
 
       // hace un llamado a un metodo
@@ -47,7 +40,7 @@ export default class mapColombia extends Component {
 
       for(var w=0;w<cuantosLotesDeObjetos;w++){
         //trae la proxima lista de contratos de tamaño n
-        var msg = lectorSecop1.traerProximoLote();
+        var msg = lectorSecops.traerProximoLote();
         console.log(msg);
         for (var i = 0; i < msg.length; i++) {
           mapaContratos[msg[i]._id] = msg[i];
@@ -68,7 +61,8 @@ export default class mapColombia extends Component {
                 ],
                 name: msg[i]._id,
                 style: {
-                    fill: color
+                    fill: color,
+                    r: 3
                 }
             };
             convert.push(n);
@@ -99,8 +93,10 @@ export default class mapColombia extends Component {
               $("#condicion").text(condicionContratoActual);
               $("#gradoSospecha").text(contratoActual.sospechosidad);
               $("#gradoSospechaAcompañante").text((contratoActual.sospechosidad<NO_SOSPECHOSO?"Bajo":(contratoActual.sospechosidad<SEMI_SOSPECHOSO?"Medio":"Alto")));
-              console.log(pozoSelecionado);
-              alert(pozoSeleccionado);
+              var certeza1=Math.floor(Math.random()*50+30);
+              var certeza2 = Math.floor(Math.random()*50+50);
+              $("#certeza1").text(certeza1+"%");
+              $("#certeza2").text(certeza2+"%");
           },
           markerStyle: {
               initial: {
@@ -119,6 +115,7 @@ export default class mapColombia extends Component {
       $('#porcentajeMal').width((100*cuantosMal/total)+'%');
 
     });
+
   }
 
     render() {
@@ -127,7 +124,7 @@ export default class mapColombia extends Component {
             <div name="principal">
                 <div className="row wrapper border-bottom white-bg page-heading">
                     <div className="col-lg-12">
-                        <h2 className="breadcrumb">Información General de los contratos en Colombia</h2>
+                        <h2 className="breadcrumb head">Información General de los contratos en Colombia</h2>
                     </div>
                 </div>
                 <div className="wrapper wrapper-content">
@@ -139,15 +136,15 @@ export default class mapColombia extends Component {
                                 </div>
                                 <div className="col-lg-5">
                                     <div className="row">
-                                        <Thumbnail className="col-lg-4 State">
+                                        <Thumbnail className="col-lg-6 State">
                                             <div className="row data float-e-margins">
                                                 <div className="col-md-12 row data-title">
-                                                    <h5 className="col-md-8" id="estadoPozos">Estado de Contratos</h5>
+                                                    <h5 className="col-md-8 bod" id="estadoPozos">Estado de Contratos</h5>
                                                     <h5 className="col-md-3" id="total"></h5>
                                                 </div>
                                                 <br/><br/>
                                                 <div className="col-md-1"></div>
-                                                <div className="col-md-11 data-content">
+                                                <div className="col-md-11 data-content bod">
                                                     <div>
                                                         <span>Bien</span>
                                                         <small className="pull-right" id="numBien"></small>
@@ -173,165 +170,85 @@ export default class mapColombia extends Component {
                                             </div>
                                         </Thumbnail>
                                         <div className="col-md-1"></div>
-                                        <Thumbnail className="col-lg-7 Emergencies">
-
-                                            <div className="row">
-                                                <div className="col-lg-12">
-                                                    <div className="data float-e-margins">
-                                                        <div className="data-title">
-                                                            <span className="label label-success pull-right">Hoy</span>
-                                                            <h5 id="listaEmergen">Lista de Emergencias</h5>
+                                        <Thumbnail className="col-lg-5 Emergencies">
+                                          <div className="row">
+                                            <div className="col-md-12 data-title bod">
+                                                <h5 id="infoContrato">Seleccione un contrato</h5>
+                                            </div>
+                                            <div className="col-md-12 data-content">
+                                                <div className="row m-t-sm">
+                                                    <Well className="col-md-12 contenedorInfoContrato">
+                                                        <div className="row tituloInfoContrato">
+                                                            <div className="col-sm-8">
+                                                                <h4 className="m-b-xs">Condición</h4>
+                                                            </div>
+                                                            <span className="col-sm-2 label label-info pull-right" id="certeza1"></span>
+                                                            <div className="col-sm-2"></div>
                                                         </div>
-                                                        <div className="data float-e-margins">
-
-                                                            <div className="data-content">
-
-                                                                <div className="stat-percent font-bold text-warning">10%
-                                                                    <i className="fa fa-level-down"></i>
-                                                                </div>
-                                                                <small>Actualización: {new Date().toDateString()}
-                                                                </small>
+                                                        <div className="row contenidoInfoContrato">
+                                                          <br/>
+                                                          <div className="col-sm-1"></div>
+                                                            <div className="col-sm-2" id="check">
+                                                                <i className="fa fa-check-square-o fa-2x"></i>
+                                                            </div>
+                                                            <div className="col-sm-1"></div>
+                                                            <div className="col-sm-6" id="cond">
+                                                              <h4 id="condicion" className="no-margins">-</h4>
+                                                            </div>
+                                                          <div className="col-sm-2"></div>
+                                                        </div>
+                                                    </Well>
+                                                    <Well className="col-md-12 contenedorInfoContrato">
+                                                        <div className="row tituloInfoContrato">
+                                                            <div className="col-sm-10">
+                                                                <h4 className="m-b-xs">Grado riesgo</h4>
+                                                            </div>
+                                                            <span className="col-sm-2 label label-info pull-right" id="certeza2"></span>
+                                                        </div>
+                                                        <div className="row contenidoInfoContrato">
+                                                            <div className="col-sm-2">
+                                                                <i className="fa fa-low-vision fa-2x"></i>
+                                                            </div>
+                                                            <div className="col-md-2"></div>
+                                                            <div className="col-sm-2">
+                                                                <h3 id="gradoSospecha" className="no-margins">-</h3>
+                                                            </div>
+                                                            <div className="col-sm-4 unionFaContenido">
+                                                              <h4 id="gradoSospechaAcompañante">-</h4>
                                                             </div>
                                                         </div>
-                                                        <div className="data-content">
-                                                            <div className="scroll_content">
-                                                                <div className="table-responsive">
-                                                                    <table className="table table-hover issue-tracker">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <span className="label label-primary">Caribe</span>
-                                                                                </td>
-                                                                                <td className="issue-info">
-                                                                                    <a href="#">
-                                                                                        Sobrecosto de 500%
-                                                                                    </a>
-                                                                                    <small>
-                                                                                        Se detectaron sobrecostos por valores superiores al 500%
-                                                                                    </small>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <small className="center"><strong>ID_Contrato: 987sf8ef</strong></small>
-                                                                                </td>
-                                                                                <td>
-                                                                                    12.02.2015 10:00 am
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <span className="label label-primary">Andina</span>
-                                                                                </td>
-                                                                                <td className="issue-info">
-                                                                                    <a href="#">
-                                                                                        Falta el 90% de la información
-                                                                                    </a>
-                                                                                    <small>
-                                                                                        Se ha detectado que un nuevo contrato carece de información
-                                                                                    </small>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <small><strong>ID_Contrato: w9rt87sf</strong></small>
-                                                                                </td>
-                                                                                <td>
-                                                                                    12.02.2015 10:00 am
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-
+                                                    </Well>
+                                                    <Well className="col-md-12 contenedorInfoContrato" >
+                                                        <div className="row tituloInfoContrato">
+                                                            <div className="col-sm-12">
+                                                                <h4 className="m-b-xs">Ver contrato</h4>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                        <div className="col-md-12 row contenidoInfoContrato">
+                                                            <Button className="col-md-12"><div className="col-sm-2">
+                                                                <i className="fa fa-share fa-2x"></i>
+                                                            </div>
+                                                            <div className="col-sm-6">
+                                                                <div className="no-margins">Click aquí</div>
+                                                            </div>
+                                                            <div className="col-sm-2"></div></Button>
+                                                        </div>
+                                                        <div className="col-sm-12 font-bold text-navy">Dispoinible
+                                                            <i className="fa fa-check"></i><p></p>
+                                                        </div>
+                                                    </Well>
                                                 </div>
                                             </div>
+                                          </div>
                                         </Thumbnail>
                                     </div>
-
                                 </div>
-
+                                <br/><br/>
+                                <div className="col-lg-3"/>
                                 <div className="col-lg-6">
-                                    <div className="row data">
-                                        <div className="data-title">
-                                            <h4><strong>Información contrato seleccionado</strong></h4>
-                                            <h3 id="infoContrato">Seleccione un contrato del mapa.</h3>
-                                        </div>
-                                        <div className="data-content">
-                                            <div className="row m-t-sm">
-                                                <div className="col-sm-4 contenedorInfoContrato">
-                                                    <div className="row tituloInfoContrato">
-                                                        <div className="col-sm-12">
-                                                            <h4 className="m-b-xs"><strong>Condición</strong></h4>
-                                                        </div>
-                                                    </div>
-                                                    <div className="row contenidoInfoContrato">
-                                                      <br/>
-                                                        <div className="col-sm-2">
-                                                            <i className="fa fa-check-square-o fa-3x"></i>
-                                                        </div>
-                                                        <div className="col-sm-2"/>
-                                                        <div className="col-sm-6">
-                                                          <h4 id="condicion" className="no-margins">Anormal</h4>
-                                                        </div>
-                                                      <div className="col-sm-2"/>
-                                                    </div>
-                                                    <div className="col-sm-12 font-bold text-navy">Certeza: {Math.floor(Math.random()*50+30)}%
-                                                        <i className="fa fa-bolt"></i>
-                                                    </div>
-                                                </div>
-                                                <div className="col-sm-4 contenedorInfoContrato">
-                                                    <div className="row tituloInfoContrato">
-                                                        <div className="col-sm-12">
-                                                            <h4 className="m-b-xs"><strong>Grado sospecha</strong></h4>
-                                                        </div>
-                                                    </div>
-                                                    <div className="row contenidoInfoContrato">
-                                                      <br/>
-                                                      <div className="col-sm-2"></div>
-                                                        <div className="col-sm-2">
-                                                            <i className="fa fa-low-vision fa-3x"></i>
-                                                        </div>
-                                                        <div className="col-sm-6 unionFaContenido">
-                                                            <h1 id="gradoSospecha" className="no-margins">5</h1>
-                                                            <h6 id="gradoSospechaAcompañante">Alto</h6>
-                                                        </div>
-                                                        <div className="col-sm-2"></div>
-                                                    </div>
-                                                    <div className="col-sm-12 font-bold text-navy">Certeza: {Math.floor(Math.random()*50+50)}%
-                                                        <i className="fa fa-bolt"></i>
-                                                    </div>
-                                                </div>
-                                                <div className="col-sm-4 contenedorInfoContrato">
-                                                    <div className="row tituloInfoContrato">
-                                                        <div className="col-sm-12">
-                                                            <h4 className="m-b-xs"><strong>Ver contrato</strong></h4>
-                                                        </div>
-                                                    </div>
-                                                    <div className="row contenidoInfoContrato" id="botonVerContrato">
-                                                      <br/>
-                                                      <div className="col-sm-2"></div>
-                                                        <div className="col-sm-2">
-                                                            <i className="fa fa-share fa-2x"></i>
-                                                        </div>
-                                                        <div className="col-sm-6">
-                                                            <h3 className="no-margins">Click aquí</h3>
-                                                        </div>
-                                                        <div className="col-sm-2"></div>
-                                                    </div>
-                                                    <div className="col-sm-12 font-bold text-navy">Dispoinible:SI
-                                                        <i className="fa fa-check"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-1"/>
-                                <div className="col-lg-5">
                                     <div className="row data float-e-margins">
                                         <div className="data-title">
-                                            <span className="label label-success pull-right">Prueba esta nueva funcionalidad</span>
+                                            <span className="label label-info pull-right">Prueba esta nueva funcionalidad</span>
                                             <h5><strong>Generar Reporte</strong></h5>
                                         </div>
                                         <div className="data-content">

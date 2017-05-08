@@ -2,7 +2,7 @@
   {
     "Entidad Compradora": "MINISTERIO DE AMBIENTE Y DESARROLLO SOSTENIBLE (MINAMBIENTE)",
     "NIT Entidad Compradora": 830115395,
-    "ID Proceso": "CO1.BDOS.18402",
+    "_IdProceso": "CO1.BDOS.18402",
     "ID Solicitud de Proceso": "CO1.REQ.19502",
     "Identificador Operacion": "CO1.OPR.17302",
     "Segmento": "Servicios",
@@ -47,7 +47,7 @@
   {
     "Entidad Compradora": "DIRECCION NACIONAL DE INTELIGENCIA",
     "NIT Entidad Compradora": 900475460,
-    "ID Proceso": "CO1.BDOS.89601",
+    "_IdProceso": "CO1.BDOS.89601",
     "ID Solicitud de Proceso": "CO1.REQ.96714",
     "Identificador Operacion": "CO1.OPR.49501",
     "Segmento": "Bienes",
@@ -92,7 +92,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL MIGRACION COLOMBIA",
     "NIT Entidad Compradora": 900477235,
-    "ID Proceso": "CO1.BDOS.54001",
+    "_IdProceso": "CO1.BDOS.54001",
     "ID Solicitud de Proceso": "CO1.REQ.60607",
     "Identificador Operacion": "CO1.OPR.25401",
     "Segmento": "No definido",
@@ -139,7 +139,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.43202",
+    "_IdProceso": "CO1.BDOS.43202",
     "ID Solicitud de Proceso": "CO1.REQ.48103",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
@@ -184,7 +184,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.99214",
+    "_IdProceso": "CO1.BDOS.99214",
     "ID Solicitud de Proceso": "CO1.REQ.107605",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
@@ -229,7 +229,7 @@
   {
     "Entidad Compradora": "MINISTERIO DE AMBIENTE Y DESARROLLO SOSTENIBLE (MINAMBIENTE)",
     "NIT Entidad Compradora": 830115395,
-    "ID Proceso": "CO1.BDOS.18402",
+    "_IdProceso": "CO1.BDOS.18402",
     "ID Solicitud de Proceso": "CO1.REQ.19502",
     "Identificador Operacion": "CO1.OPR.17302",
     "Segmento": "Servicios",
@@ -274,7 +274,7 @@
   {
     "Entidad Compradora": "DEPARTAMENTO NACIONAL DE PLANEACION",
     "NIT Entidad Compradora": 899999011,
-    "ID Proceso": "CO1.BDOS.83206",
+    "_IdProceso": "CO1.BDOS.83206",
     "ID Solicitud de Proceso": "CO1.REQ.91017",
     "Identificador Operacion": "CO1.OPR.13901",
     "Segmento": "Servicios",
@@ -319,7 +319,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.43202",
+    "_IdProceso": "CO1.BDOS.43202",
     "ID Solicitud de Proceso": "CO1.REQ.48103",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
@@ -364,7 +364,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.43202",
+    "_IdProceso": "CO1.BDOS.43202",
     "ID Solicitud de Proceso": "CO1.REQ.48103",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
@@ -409,7 +409,7 @@
   {
     "Entidad Compradora": "FUERZA AÉREA COLOMBIANA",
     "NIT Entidad Compradora": 899999102,
-    "ID Proceso": "CO1.BDOS.77506",
+    "_IdProceso": "CO1.BDOS.77506",
     "ID Solicitud de Proceso": "CO1.REQ.85802",
     "Identificador Operacion": "CO1.OPR.43701",
     "Segmento": "No definido",
@@ -456,7 +456,7 @@
   {
     "Entidad Compradora": "INSTITUTO NACIONAL PENITENCIARIO Y CARCELARIO INPEC",
     "NIT Entidad Compradora": 800215546,
-    "ID Proceso": "CO1.BDOS.86702",
+    "_IdProceso": "CO1.BDOS.86702",
     "ID Solicitud de Proceso": "CO1.REQ.94110",
     "Identificador Operacion": "CO1.OPR.85701",
     "Segmento": "Servicios",
@@ -501,7 +501,7 @@
   {
     "Entidad Compradora": "MINISTERIO DE HACIENDA Y CREDITO PUBLICO",
     "NIT Entidad Compradora": 899999090,
-    "ID Proceso": "CO1.BDOS.69602",
+    "_IdProceso": "CO1.BDOS.69602",
     "ID Solicitud de Proceso": "CO1.REQ.75706",
     "Identificador Operacion": "CO1.OPR.401",
     "Segmento": "Servicios",
@@ -546,7 +546,7 @@
   {
     "Entidad Compradora": "DIRECCION NACIONAL DE INTELIGENCIA",
     "NIT Entidad Compradora": 900475460,
-    "ID Proceso": "CO1.BDOS.89601",
+    "_IdProceso": "CO1.BDOS.89601",
     "ID Solicitud de Proceso": "CO1.REQ.96714",
     "Identificador Operacion": "CO1.OPR.49501",
     "Segmento": "Bienes",
@@ -591,7 +591,7 @@
   {
     "Entidad Compradora": "INSTITUTO NACIONAL PENITENCIARIO Y CARCELARIO INPEC",
     "NIT Entidad Compradora": 800215546,
-    "ID Proceso": "CO1.BDOS.86702",
+    "_IdProceso": "CO1.BDOS.86702",
     "ID Solicitud de Proceso": "CO1.REQ.94110",
     "Identificador Operacion": "CO1.OPR.85701",
     "Segmento": "Servicios",
@@ -636,7 +636,7 @@
   {
     "Entidad Compradora": "FONDO DE TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES",
     "NIT Entidad Compradora": 800131648,
-    "ID Proceso": "CO1.BDOS.91705",
+    "_IdProceso": "CO1.BDOS.91705",
     "ID Solicitud de Proceso": "CO1.REQ.101715",
     "Identificador Operacion": "CO1.OPR.108801",
     "Segmento": "Servicios",
@@ -683,7 +683,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.99509",
+    "_IdProceso": "CO1.BDOS.99509",
     "ID Solicitud de Proceso": "CO1.REQ.110807",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
@@ -728,7 +728,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL MIGRACION COLOMBIA",
     "NIT Entidad Compradora": 900477235,
-    "ID Proceso": "CO1.BDOS.60601",
+    "_IdProceso": "CO1.BDOS.60601",
     "ID Solicitud de Proceso": "CO1.REQ.68406",
     "Identificador Operacion": "CO1.OPR.25401",
     "Segmento": "Bienes",
@@ -776,7 +776,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.43202",
+    "_IdProceso": "CO1.BDOS.43202",
     "ID Solicitud de Proceso": "CO1.REQ.48103",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
@@ -821,7 +821,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.43202",
+    "_IdProceso": "CO1.BDOS.43202",
     "ID Solicitud de Proceso": "CO1.REQ.48103",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
@@ -866,7 +866,7 @@
   {
     "Entidad Compradora": "FUERZA AÉREA COLOMBIANA",
     "NIT Entidad Compradora": 899999102,
-    "ID Proceso": "CO1.BDOS.74208",
+    "_IdProceso": "CO1.BDOS.74208",
     "ID Solicitud de Proceso": "CO1.REQ.83205",
     "Identificador Operacion": "CO1.OPR.43701",
     "Segmento": "Servicios",
@@ -911,7 +911,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.92312",
+    "_IdProceso": "CO1.BDOS.92312",
     "ID Solicitud de Proceso": "CO1.REQ.108504",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
@@ -956,7 +956,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL MIGRACION COLOMBIA",
     "NIT Entidad Compradora": 900477235,
-    "ID Proceso": "CO1.BDOS.96308",
+    "_IdProceso": "CO1.BDOS.96308",
     "ID Solicitud de Proceso": "CO1.REQ.103211",
     "Identificador Operacion": "CO1.OPR.25401",
     "Segmento": "Bienes",
@@ -1001,7 +1001,7 @@
   {
     "Entidad Compradora": "MINISTERIO DE AMBIENTE Y DESARROLLO SOSTENIBLE (MINAMBIENTE)",
     "NIT Entidad Compradora": 830115395,
-    "ID Proceso": "CO1.BDOS.18402",
+    "_IdProceso": "CO1.BDOS.18402",
     "ID Solicitud de Proceso": "CO1.REQ.19502",
     "Identificador Operacion": "CO1.OPR.17302",
     "Segmento": "Servicios",
@@ -1046,7 +1046,7 @@
   {
     "Entidad Compradora": "FONDO DE VIGILANCIA Y SEGURIDAD DE BOGOTÁ D.C",
     "NIT Entidad Compradora": 860526499,
-    "ID Proceso": "CO1.BDOS.53023",
+    "_IdProceso": "CO1.BDOS.53023",
     "ID Solicitud de Proceso": "CO1.REQ.58803",
     "Identificador Operacion": "CO1.OPR.54401",
     "Segmento": "Servicios",
@@ -1091,7 +1091,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.44902",
+    "_IdProceso": "CO1.BDOS.44902",
     "ID Solicitud de Proceso": "CO1.REQ.51802",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "No definido",
@@ -1138,7 +1138,7 @@
   {
     "Entidad Compradora": "FUERZA AÉREA COLOMBIANA",
     "NIT Entidad Compradora": 899999102,
-    "ID Proceso": "CO1.BDOS.76401",
+    "_IdProceso": "CO1.BDOS.76401",
     "ID Solicitud de Proceso": "CO1.REQ.85607",
     "Identificador Operacion": "CO1.OPR.43701",
     "Segmento": "Obra Pública",
@@ -1183,7 +1183,7 @@
   {
     "Entidad Compradora": "INSTITUTO NACIONAL PENITENCIARIO Y CARCELARIO INPEC",
     "NIT Entidad Compradora": 800215546,
-    "ID Proceso": "CO1.BDOS.86702",
+    "_IdProceso": "CO1.BDOS.86702",
     "ID Solicitud de Proceso": "CO1.REQ.94110",
     "Identificador Operacion": "CO1.OPR.85701",
     "Segmento": "Servicios",
@@ -1228,7 +1228,7 @@
   {
     "Entidad Compradora": "INSTITUTO NACIONAL PENITENCIARIO Y CARCELARIO INPEC",
     "NIT Entidad Compradora": 800215546,
-    "ID Proceso": "CO1.BDOS.98901",
+    "_IdProceso": "CO1.BDOS.98901",
     "ID Solicitud de Proceso": "CO1.REQ.106505",
     "Identificador Operacion": "CO1.OPR.85701",
     "Segmento": "Servicios",
@@ -1273,7 +1273,7 @@
   {
     "Entidad Compradora": "AUTORIDAD NACIONAL DE LICENCIAS AMBIENTALES - ANLA",
     "NIT Entidad Compradora": 900467239,
-    "ID Proceso": "CO1.BDOS.96914",
+    "_IdProceso": "CO1.BDOS.96914",
     "ID Solicitud de Proceso": "CO1.REQ.103609",
     "Identificador Operacion": "CO1.OPR.132201",
     "Segmento": "Servicios",
@@ -1318,7 +1318,7 @@
   {
     "Entidad Compradora": "FONDO DE VIGILANCIA Y SEGURIDAD DE BOGOTÁ D.C",
     "NIT Entidad Compradora": 860526499,
-    "ID Proceso": "CO1.BDOS.83102",
+    "_IdProceso": "CO1.BDOS.83102",
     "ID Solicitud de Proceso": "CO1.REQ.88810",
     "Identificador Operacion": "CO1.OPR.54401",
     "Segmento": "Obra Pública",
@@ -1366,7 +1366,7 @@
   {
     "Entidad Compradora": "FUERZA AÉREA COLOMBIANA",
     "NIT Entidad Compradora": 899999102,
-    "ID Proceso": "CO1.BDOS.85704",
+    "_IdProceso": "CO1.BDOS.85704",
     "ID Solicitud de Proceso": "CO1.REQ.93506",
     "Identificador Operacion": "CO1.OPR.43701",
     "Segmento": "Servicios",
@@ -1411,7 +1411,7 @@
   {
     "Entidad Compradora": "INSTITUTO NACIONAL PENITENCIARIO Y CARCELARIO INPEC",
     "NIT Entidad Compradora": 800215546,
-    "ID Proceso": "CO1.BDOS.90314",
+    "_IdProceso": "CO1.BDOS.90314",
     "ID Solicitud de Proceso": "CO1.REQ.98305",
     "Identificador Operacion": "CO1.OPR.85701",
     "Segmento": "Servicios",
@@ -1458,7 +1458,7 @@
   {
     "Entidad Compradora": "FUERZA AÉREA COLOMBIANA",
     "NIT Entidad Compradora": 899999102,
-    "ID Proceso": "CO1.BDOS.75403",
+    "_IdProceso": "CO1.BDOS.75403",
     "ID Solicitud de Proceso": "CO1.REQ.83207",
     "Identificador Operacion": "CO1.OPR.43701",
     "Segmento": "Servicios",
@@ -1505,7 +1505,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.43202",
+    "_IdProceso": "CO1.BDOS.43202",
     "ID Solicitud de Proceso": "CO1.REQ.48103",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
@@ -1550,7 +1550,7 @@
   {
     "Entidad Compradora": "FONDO DE TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES",
     "NIT Entidad Compradora": 800131648,
-    "ID Proceso": "CO1.BDOS.96502",
+    "_IdProceso": "CO1.BDOS.96502",
     "ID Solicitud de Proceso": "CO1.REQ.106915",
     "Identificador Operacion": "CO1.OPR.108801",
     "Segmento": "Servicios",
@@ -1595,7 +1595,7 @@
   {
     "Entidad Compradora": "FONDO ROTATORIO DEL MINISTERIO DE RELACIONES EXTERIORES",
     "NIT Entidad Compradora": 860511071,
-    "ID Proceso": "CO1.BDOS.49103",
+    "_IdProceso": "CO1.BDOS.49103",
     "ID Solicitud de Proceso": "CO1.REQ.58702",
     "Identificador Operacion": "CO1.OPR.63701",
     "Segmento": "Obra Pública",
@@ -1640,7 +1640,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL MIGRACION COLOMBIA",
     "NIT Entidad Compradora": 900477235,
-    "ID Proceso": "CO1.BDOS.35202",
+    "_IdProceso": "CO1.BDOS.35202",
     "ID Solicitud de Proceso": "CO1.REQ.39801",
     "Identificador Operacion": "CO1.OPR.25401",
     "Segmento": "Servicios",
@@ -1687,7 +1687,7 @@
   {
     "Entidad Compradora": "FONDO DE VIGILANCIA Y SEGURIDAD DE BOGOTÁ D.C",
     "NIT Entidad Compradora": 860526499,
-    "ID Proceso": "CO1.BDOS.55205",
+    "_IdProceso": "CO1.BDOS.55205",
     "ID Solicitud de Proceso": "CO1.REQ.62001",
     "Identificador Operacion": "CO1.OPR.54401",
     "Segmento": "Obra Pública",
@@ -1735,7 +1735,7 @@
   {
     "Entidad Compradora": "MINISTERIO DE EDUCACION NACIONAL (MEN)",
     "NIT Entidad Compradora": 899999001,
-    "ID Proceso": "CO1.BDOS.60204",
+    "_IdProceso": "CO1.BDOS.60204",
     "ID Solicitud de Proceso": "CO1.REQ.68615",
     "Identificador Operacion": "CO1.OPR.52401",
     "Segmento": "Servicios",
@@ -1782,7 +1782,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.43202",
+    "_IdProceso": "CO1.BDOS.43202",
     "ID Solicitud de Proceso": "CO1.REQ.48103",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
@@ -1827,7 +1827,7 @@
   {
     "Entidad Compradora": "FONDO DE VIGILANCIA Y SEGURIDAD DE BOGOTÁ D.C",
     "NIT Entidad Compradora": 860526499,
-    "ID Proceso": "CO1.BDOS.53023",
+    "_IdProceso": "CO1.BDOS.53023",
     "ID Solicitud de Proceso": "CO1.REQ.58803",
     "Identificador Operacion": "CO1.OPR.54401",
     "Segmento": "Servicios",
@@ -1872,7 +1872,7 @@
   {
     "Entidad Compradora": "UNIDAD ADMINISTRATIVA ESPECIAL DE GESTION DE RESTITUCION DE TIERRAS DESPOJADAS",
     "NIT Entidad Compradora": 900498879,
-    "ID Proceso": "CO1.BDOS.43202",
+    "_IdProceso": "CO1.BDOS.43202",
     "ID Solicitud de Proceso": "CO1.REQ.48103",
     "Identificador Operacion": "CO1.OPR.37901",
     "Segmento": "Servicios",
