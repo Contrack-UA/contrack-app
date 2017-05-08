@@ -1,7 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import {Well} from 'react-bootstrap';
+import {BarChart} from 'react-easy-chart';
+import top20 from '../data/s2top20.json';
 
-export default class Graphs2 extends Component {
+export default class Graphs1 extends Component {
 
   constructor(props) {
     super(props);
@@ -26,11 +28,28 @@ export default class Graphs2 extends Component {
       )
     } else if (this.state.graph === 1) {
       return (
-        <div className="scale bod bold center"></div>
+        <div>
+          <div style={{display: 'inline-block'}}>
+            <BarChart
+              width={1200}
+              height={400}
+              data={top20}
+              margin={{top: 10, left: 60, right: 100, bottom: 50}}
+              clickHandler={(d) => this.setState({dataDisplay: `${d.x}, tiene un valor de $ ${d.y}`})}
+            />
+          </div>
+          <div style={{display: 'inline-block', verticalAlign: 'top', paddingLeft: '20px'}}>
+            <h2>
+              {this.state.dataDisplay ? this.state.dataDisplay : 'Haz click en una barra para ver la información'}
+            </h2>
+          </div>
+        </div>
       )
     } else {
       return (
-        <div className="scale bod bold center"></div>
+        <div className="scale bod bold center">
+          <h3>2 <strong> vs. </strong> 2</h3>
+        </div>
       )
     }
 
@@ -40,18 +59,15 @@ export default class Graphs2 extends Component {
     return(
       <div className="container">
         <div className="row head green">
-          <h1>Gráficas del SECOP II</h1>
-        </div>
-        <div className="btn-group">
-          <button type="button" className="btn btn-default" onClick={() => {this.changeGraph(0)}}>
-            Sospechas vs. Valor
-          </button>
-          <button type="button" className="btn btn-default" onClick={() => {this.changeGraph(1)}}>
-            Contratos más caros
-          </button>
-          <button type="button" className="btn btn-default" onClick={() => {this.changeGraph(2)}}>
-            Otra cosa
-          </button>
+          <h1 className="col-md-4">Gráficas del SECOP II</h1>
+          <div className="btn-group col-md-4">
+            <button type="button" className="btn btn-default" onClick={() => {this.changeGraph(0)}}>
+              Sospechas vs. Valor
+            </button>
+            <button type="button" className="btn btn-default" onClick={() => {this.changeGraph(1)}}>
+              Contratos más caros
+            </button>
+          </div>
         </div>
         <div>
         {
