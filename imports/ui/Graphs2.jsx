@@ -47,7 +47,7 @@ export default class Graphs2 extends Component {
         <div className="row head green">
           <h1>Gráficas del SECOP II</h1>
         </div>
-        <div className="center btn-group">
+        <div className="btn-group">
           <button type="button" className="btn btn-default" onClick={() => {this.changeGraph(0)}}>
             Sospechas vs. Valor
           </button>
