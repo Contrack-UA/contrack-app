@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import ReactDOM from 'react-dom';
 import {Well} from 'react-bootstrap';
 
 export default class Graphs2 extends Component {

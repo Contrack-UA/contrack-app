@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Well} from 'react-bootstrap';
+import {BarChart} from 'react-easy-chart';
 
 
 export default class Graphs1 extends Component {
