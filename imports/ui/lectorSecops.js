@@ -1,4 +1,4 @@
-export default lectorSecops = { traerProximoLote: secop2Lista }
+export default lectorSecops = { traerProximoLote: secop2Lista, buscarContratoId: buscarContratoId }
 
 import secop2 from '../data/secop2.json';
 import secop1 from '../data/secop1.json';
@@ -363,15 +363,19 @@ function darLatitudLongitud(lugar){
 }
 
 function buscarContratoId(id){
-  for(var h=0; h<secop1.length; h++){
+  for(var h=0; h<secop1.length/3; h++){
+    //console.log('buscando');
     if(secop1[h]._id === id){
+      //console.log("encontro");
+      //console.log(secop1[h]);
       return secop1[h];
     }
   }
-  for(var h=0; h<secop1.length; h++){
+  /**for(var h=0; h<secop2.length; h++){
     if(secop2[h]._IdProceso === id){
+      console.log("encontro en secop 2");
       return secop2[h];
     }
-  }
+  }*/
   return {noEncontro:true};
 }
