@@ -60,19 +60,25 @@ function secop2Lista(){
     listaContratos.push(nuevoContrato);
   }*/
   //secop 1
+  var max = 10;
   for(var h=0; h<secop1.length/3; h++){
     var actual = secop1[h];
     //console.log(actual);
     var ubicacion = darLatitudLongitud(actual.nomEntidad.split(" - ")[0]);
-    var probabilidad = Math.random();
-    if(probabilidad< 0.1){
+    if(h%400 === 0){
       var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:((actual.sospechas.length) + 3) }
     }
-    else if(probabilidad < 0.4){
+    else if(h%3 === 0){
       var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:((actual.sospechas.length) + 1) }
     }
     else{
       var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:actual.sospechas.length }
+    }
+
+
+    if(((actual.nomEntidad.split(" - ")[0] === 'LA GUAJIRA' )|| (actual.nomEntidad.split(" - ")[0] === 'ATLÁNTICO' )) && max >0){
+        var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:actual.sospechas.length +4};
+        max--;
     }
 
     listaContratos.push(nuevoContrato);
@@ -122,6 +128,7 @@ function darLatitudLongitud(lugar){
   var t = 2*Math.PI*Math.random();
   var u = Math.random()+Math.random();
   var r = u>1? 2-u : u;
+  r = r-0.2;
     if(lugar === 'ANTIOQUIA'){
       var y = hashDeUbicacion.ANTIOQUIA.lat;
       var x= hashDeUbicacion.ANTIOQUIA.long;
@@ -256,13 +263,6 @@ function darLatitudLongitud(lugar){
       longitud= r* Math.sin(t)+x;
       return {lati:latitud, longi: longitud};
     }
-    else if(lugar === 'SAN ANDRÉS  PROVIDENCIA Y SANTA CATALINA'){
-      var y = hashDeUbicacion.SAN_ANDRES.lat;
-      var x= hashDeUbicacion.SAN_ANDRES.long;
-      latitud= r* Math.cos(t) +y;
-      longitud= r* Math.sin(t)+x;
-      return {lati:latitud, longi: longitud};
-    }
     else if(lugar === 'BOGOTÁ D.C.'){
       var y = hashDeUbicacion.BOGOTA.lat;
       var x= hashDeUbicacion.BOGOTA.long;
@@ -347,6 +347,13 @@ function darLatitudLongitud(lugar){
       longitud= r* Math.sin(t)+x;
       return {lati:latitud, longi: longitud};
     }
+    /**else if(lugar === 'SAN ANDRÉS  PROVIDENCIA Y SANTA CATALINA'){
+      var y = hashDeUbicacion.SAN_ANDRES.lat;
+      var x= hashDeUbicacion.SAN_ANDRES.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }**/
 
    console.log("ubicacion no encontrada "+ lugar)
 
