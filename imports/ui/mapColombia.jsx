@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Well, Thumbnail} from 'react-bootstrap';
+import Navigbar from './Navigbar.jsx';
 import secop2 from '../data/secop2.json';
 import lectorSecops from './lectorSecops.js';
 import {Button} from 'react-bootstrap';
 
 const  NO_SOSPECHOSO =2;
-const  SEMI_SOSPECHOSO=4;
+const  SEMI_SOSPECHOSO=3;
+var idSeleccionado = undefined;
 //import manejoRegiones from '../../client/manejoRegiones.js'
 
 export default class mapColombia extends Component {
@@ -17,7 +19,15 @@ export default class mapColombia extends Component {
     };
   }
 
-  dibujar(){
+  mostrarContrato(id){
+    if(id){
+      sweetAlert("Hello world!");
+    }else{
+      sweetAlert("Por favor seleccione un contrato del mapa para poder ver sus caracteristicas.");
+    }
+  }
+
+  dibujar(filtro){
     $('#colombia-map').empty();
     console.log("dibujando mapa");
       var contratoActual = undefined;
@@ -64,7 +74,16 @@ export default class mapColombia extends Component {
                     r: 3
                 }
             };
-            convert.push(n);
+            if(filtro === 'mal' && color !== 'red'){
+            }
+            else if(filtro === 'bien' && color !== 'green'){
+            }
+            else if(filtro === 'medio' && color !== 'yellow'){
+            }
+            else{
+              convert.push(n);
+            }
+
         }
         //aquí ya estan todos los contratos a ser dibujados
         //console.log(convert);
@@ -97,6 +116,8 @@ export default class mapColombia extends Component {
               var certeza2 = Math.floor(Math.random()*50+50);
               $("#certeza1").text(certeza1+"%");
               $("#certeza2").text(certeza2+"%");
+
+              idSeleccionado = contratoActual._id;
           },
           markerStyle: {
               initial: {
@@ -150,27 +171,28 @@ export default class mapColombia extends Component {
                                                         <small className="pull-right" id="numBien"></small>
                                                     </div>
                                                     <div className="progress">
-                                                        <div className="progress-bar progress-bar-success" id="porcentajeBien"></div>
+                                                        <div className="progress-bar progress-bar-success" id="porcentajeBien" onClick={()=>{this.dibujar('bien')}}></div>
                                                     </div>
                                                     <div>
                                                         <span>En riesgo</span>
                                                         <small className="pull-right" id="numMedio"></small>
                                                     </div>
                                                     <div className="progress">
-                                                        <div className="progress-bar progress-bar-warning" id="porcentajeMedio"></div>
+                                                        <div className="progress-bar progress-bar-warning" id="porcentajeMedio" onClick={()=>{this.dibujar('medio')}}></div>
                                                     </div>
                                                     <div>
                                                         <span>Condiciones anormales</span>
                                                         <small className="pull-right" id="numMal"></small>
                                                     </div>
                                                     <div className="progress">
-                                                        <div className="progress-bar progress-bar-danger" id="porcentajeMal"></div>
+                                                        <div className="progress-bar progress-bar-danger" id="porcentajeMal" onClick={()=>{this.dibujar('mal')}}></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </Thumbnail>
                                         <div className="col-md-1"></div>
-                                          <div className="row col-lg-5 Emergencies bod">
+                                        <Thumbnail className="col-lg-5 Emergencies">
+                                          <div className="row">
                                             <div className="col-md-12 data-title bod">
                                                 <h5 id="infoContrato">Seleccione un contrato</h5>
                                             </div>
@@ -223,7 +245,7 @@ export default class mapColombia extends Component {
                                                                 <h4 className="m-b-xs">Ver contrato</h4>
                                                             </div>
                                                         </div>
-                                                        <div className="col-md-12 row contenidoInfoContrato">
+                                                        <div className="col-md-12 row contenidoInfoContrato" onClick={()=>{this.mostrarContrato(idSeleccionado);}}>
                                                             <Button className="col-md-12"><div className="col-sm-2">
                                                                 <i className="fa fa-share fa-2x"></i>
                                                             </div>
@@ -232,17 +254,103 @@ export default class mapColombia extends Component {
                                                             </div>
                                                             <div className="col-sm-2"></div></Button>
                                                         </div>
-                                                        <div className="col-sm-12 font-bold text-navy">Disponible
+                                                        <div className="col-sm-12 font-bold text-navy">Dispoinible
                                                             <i className="fa fa-check"></i><p></p>
                                                         </div>
                                                     </Well>
                                                 </div>
                                             </div>
                                           </div>
+                                        </Thumbnail>
                                     </div>
                                 </div>
                                 <br/><br/>
-
+                                <div className="col-lg-3"/>
+                                <div className="col-lg-6">
+                                    <div className="row data float-e-margins">
+                                        <div className="data-title">
+                                            <span className="label label-info pull-right">Prueba esta nueva funcionalidad</span>
+                                            <h5><strong>Generar Reporte</strong></h5>
+                                        </div>
+                                        <div className="data-content">
+                                            <div className="row">
+                                                <div className="col-lg-12">
+                                                    <button data-toggle="dropdown" className="btn btn-primary btn-block dropdown-toggle">Reporte por Zona
+                                                        <span className="caret"></span>
+                                                    </button>
+                                                    <ul className="dropdown-menu">
+                                                        <li>
+                                                            <a href="#" className="font-bold">Mensual</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Trimestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Semestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Anual</a>
+                                                        </li>
+                                                        <li className="divider"></li>
+                                                        <li>
+                                                            <a href="#">Más opciones</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-lg-12">
+                                                    <button data-toggle="dropdown" className="btn btn-default btn-block dropdown-toggle">Reporte por emergencia
+                                                        <span className="caret"></span>
+                                                    </button>
+                                                    <ul className="dropdown-menu">
+                                                        <li>
+                                                            <a href="#" className="font-bold">Mensual</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Trimestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Semestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Anual</a>
+                                                        </li>
+                                                        <li className="divider"></li>
+                                                        <li>
+                                                            <a href="#">Más opciones</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-lg-12">
+                                                    <button data-toggle="dropdown" className="btn btn-default btn-block dropdown-toggle">Reporte por sensor
+                                                        <span className="caret"></span>
+                                                    </button>
+                                                    <ul className="dropdown-menu">
+                                                        <li>
+                                                            <a href="#" className="font-bold">Mensual</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Trimestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Semestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Anual</a>
+                                                        </li>
+                                                        <li className="divider"></li>
+                                                        <li>
+                                                            <a href="#">Más opciones</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
