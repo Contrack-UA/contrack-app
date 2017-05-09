@@ -21,7 +21,16 @@ export default class mapColombia extends Component {
 
   mostrarContrato(id){
     if(id){
-      sweetAlert("Hello world!");
+      var contrato = lectorSecops.buscarContratoId(id);
+      sweetAlert({
+        title: 'contrato con id: '+id,
+        text:  contrato.nomEntidad+" "+ contrato.lugar+" "+ contrato.detalle+" "+ contrato.valor+" "+ contrato.sospechas,
+        type: 'info',
+        showCancelButton: false,
+        closeOnConfirm: false,
+        disableButtonsOnConfirm: true,
+        confirmLoadingButtonColor: '#DD6B55'
+      });
     }else{
       sweetAlert("Por favor seleccione un contrato del mapa para poder ver sus caracteristicas.");
     }
