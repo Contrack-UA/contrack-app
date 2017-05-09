@@ -170,6 +170,13 @@
 h4{
   margin-top: 0 !important;
 }
+#porcentajeMal,
+#porcentajeMedio,
+#porcentajeBien:hover{
+  cursor: pointer;
+}
+
+
 @media (min-width: 992px){
 .col-md-11 {
     width: 100% !important;
