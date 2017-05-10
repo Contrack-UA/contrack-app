@@ -9,6 +9,8 @@ import {Button} from 'react-bootstrap';
 const  NO_SOSPECHOSO =2;
 const  SEMI_SOSPECHOSO=3;
 var idSeleccionado = undefined;
+var filtro = undefined;
+var valor = undefined;
 //import manejoRegiones from '../../client/manejoRegiones.js'
 
 export default class mapColombia extends Component {
@@ -36,7 +38,7 @@ export default class mapColombia extends Component {
     }
   }
 
-  dibujar(filtro){
+  dibujar(){
     $('#colombia-map').empty();
     console.log("dibujando mapa");
       var contratoActual = undefined;
@@ -90,7 +92,16 @@ export default class mapColombia extends Component {
             else if(filtro === 'medio' && color !== 'yellow'){
             }
             else{
-              convert.push(n);
+              if(valor){
+                console.log(  msg[i]);
+                console.log("el valor de filtro actual es: "+valor +"  el valor del contrato es "+msg[i]);
+                  if (valor < msg[i].valor ){
+                    convert.push(n);
+                  }
+              }
+              else{
+                convert.push(n);
+              }
             }
 
         }
@@ -140,6 +151,9 @@ export default class mapColombia extends Component {
       $('#numBien').text(cuantosBien);
       $('#numMedio').text(cuantosMedio);
       $('#numMal').text(cuantosMal);
+      $('#porcentajeBien').width( "");
+      $('#porcentajeMedio').width("");
+      $('#porcentajeMal').width("");
       $('#porcentajeBien').width( (100*cuantosBien/total)+'%');
       $('#porcentajeMedio').width((100*cuantosMedio/total)+'%');
       $('#porcentajeMal').width((100*cuantosMal/total)+'%');
@@ -168,7 +182,7 @@ export default class mapColombia extends Component {
                                     <div className="row">
                                         <div className="col-md-6"><Thumbnail className="col-md-12 State">
                                             <div className="row data float-e-margins">
-                                                <div className="col-md-12 row data-title" onClick={()=>{this.dibujar();}}>
+                                                <div className="col-md-12 row data-title" onClick={()=>{filtro = undefined;this.dibujar();}}>
                                                     <h5 className="col-md-8 bod"  id="numTodos">Estado de Contratos</h5>
                                                     <h5 className="col-md-3" id="total"></h5>
                                                 </div>
@@ -180,21 +194,21 @@ export default class mapColombia extends Component {
                                                         <small className="pull-right" id="numBien"></small>
                                                     </div>
                                                     <div className="progress">
-                                                        <div className="progress-bar progress-bar-success" id="porcentajeBien" onClick={()=>{this.dibujar('bien')}}></div>
+                                                        <div className="progress-bar progress-bar-success" id="porcentajeBien" onClick={()=>{filtro = 'bien';this.dibujar();}}></div>
                                                     </div>
                                                     <div>
                                                         <span>En riesgo</span>
                                                         <small className="pull-right" id="numMedio"></small>
                                                     </div>
                                                     <div className="progress">
-                                                        <div className="progress-bar progress-bar-warning" id="porcentajeMedio" onClick={()=>{this.dibujar('medio')}}></div>
+                                                        <div className="progress-bar progress-bar-warning" id="porcentajeMedio" onClick={()=>{filtro = 'medio';this.dibujar();}}></div>
                                                     </div>
                                                     <div>
                                                         <span>Condiciones anormales</span>
                                                         <small className="pull-right" id="numMal"></small>
                                                     </div>
                                                     <div className="progress">
-                                                        <div className="progress-bar progress-bar-danger" id="porcentajeMal" onClick={()=>{this.dibujar('mal')}}></div>
+                                                        <div className="progress-bar progress-bar-danger" id="porcentajeMal" onClick={()=>{filtro = 'mal';this.dibujar();}}></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -202,8 +216,9 @@ export default class mapColombia extends Component {
                                         <Thumbnail className="col-md-12 State">
                                           <div><strong>Filtros</strong></div>
                                           <ul>
-                                            <li>Filtra por estado del contrato: Click en barras de porcentaje.</li>
-                                            <li>Filtra por el precio del contrato: Ingresa un valor</li>
+                                            <h5><strong>Filtra</strong> por estado del contrato: Click en barras de porcentaje.</h5>
+                                            <h5><strong>Filtra</strong> por el precio del contrato: Ingresa un valor</h5>
+                                            <input id="inputValorMapa" type="number" onChange={(event) => {valor = event.target.value;this.dibujar()}}></input>
                                           </ul>
                                         </Thumbnail></div>
                                         <div className="col-md-1"></div>

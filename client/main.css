@@ -176,7 +176,9 @@ h4{
 #porcentajeBien:hover{
   cursor: pointer;
 }
-
+#inputValorMapa{
+  width:3em;
+}
 
 @media (min-width: 992px){
 .col-md-11 {
