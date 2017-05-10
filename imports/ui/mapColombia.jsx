@@ -21,12 +21,24 @@ export default class mapColombia extends Component {
     };
   }
 
+  formatMoney (n, d, t){
+  var
+      d = d == undefined ? "." : d,
+      t = t == undefined ? "," : t,
+      s = n < 0 ? "-" : "$ ",
+      i = String(parseInt(n = Math.abs(Number(n) || 0))),
+      j = (j = i.length) > 3 ? j % 3 : 0;
+     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t);
+   };
+
   mostrarContrato(id){
     if(id){
       var contrato = lectorSecops.buscarContratoId(id);
       sweetAlert({
-        title: 'contrato con id: '+id,
-        text:  contrato.nomEntidad+"\n "+ contrato.lugar+"\n "+ contrato.detalle+"\n Valor:"+ contrato.valor+"\n \n"+ contrato.sospechas.toString(),
+        title: 'Contrato con ID: '+id,
+        text:  contrato.nomEntidad+"\n "+ contrato.lugar+"\n "+
+        contrato.detalle+"\n Valor:"+ this.formatMoney(contrato.valor,"'",',')+"\n \n"+ contrato.sospechas.toString()
+        +"\n \n"+ contrato.link,
         type: 'info',
         showCancelButton: false,
         closeOnConfirm: false,
@@ -34,7 +46,7 @@ export default class mapColombia extends Component {
         confirmLoadingButtonColor: '#DD6B55'
       });
     }else{
-      sweetAlert("Por favor seleccione un contrato del mapa para poder ver sus caracteristicas.");
+      sweetAlert("Por favor seleccione un contrato del mapa para poder ver sus características.");
     }
   }
 
