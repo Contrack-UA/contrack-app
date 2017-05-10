@@ -60,24 +60,24 @@ function secop2Lista(){
     listaContratos.push(nuevoContrato);
   }*/
   //secop 1
-  var max = 10;
+  var max = 15;
   for(var h=0; h<secop1.length/3; h++){
     var actual = secop1[h];
     //console.log(actual);
     var ubicacion = darLatitudLongitud(actual.nomEntidad.split(" - ")[0]);
     if(h%400 === 0){
-      var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:((actual.sospechas.length) + 3) }
+      var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:((actual.sospechas.length) + 3),valor:actual.valor }
     }
     else if(h%3 === 0){
-      var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:((actual.sospechas.length) + 1) }
+      var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:((actual.sospechas.length) + 1),valor:actual.valor }
     }
     else{
-      var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:actual.sospechas.length }
+      var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:actual.sospechas.length ,valor:actual.valor}
     }
 
 
     if(((actual.nomEntidad.split(" - ")[0] === 'LA GUAJIRA' )|| (actual.nomEntidad.split(" - ")[0] === 'ATLÁNTICO' )) && max >0){
-        var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:actual.sospechas.length +4};
+        var nuevoContrato= {_id:actual._id,lat:ubicacion.lati,lon:ubicacion.longi,sospechosidad:actual.sospechas.length +4,valor:actual.valor};
         max--;
     }
 
@@ -122,6 +122,7 @@ hashDeUbicacion.GUAVIARE = {lat:1.873596, long:-72.2179};
 hashDeUbicacion.META = {lat:3.331229, long:-73.0473};
 hashDeUbicacion.VAUPES = {lat:0.907636, long:-70.7632};
 hashDeUbicacion.GUAINIA = {lat:2.870789, long:-68.7510};
+hashDeUbicacion.AMAZONAS={lat:-1.288959,long: -72.364682};
 
 
 function darLatitudLongitud(lugar){
@@ -343,6 +344,13 @@ function darLatitudLongitud(lugar){
     else if(lugar === 'GUAINÍA'){
       var y = hashDeUbicacion.GUAINIA.lat;
       var x= hashDeUbicacion.GUAINIA.long;
+      latitud= r* Math.cos(t) +y;
+      longitud= r* Math.sin(t)+x;
+      return {lati:latitud, longi: longitud};
+    }
+    else if(lugar === 'AMAZONAS'){
+      var y = hashDeUbicacion.AMAZONAS.lat;
+      var x= hashDeUbicacion.AMAZONAS.long;
       latitud= r* Math.cos(t) +y;
       longitud= r* Math.sin(t)+x;
       return {lati:latitud, longi: longitud};
