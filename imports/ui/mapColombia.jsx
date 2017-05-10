@@ -24,7 +24,7 @@ export default class mapColombia extends Component {
       var contrato = lectorSecops.buscarContratoId(id);
       sweetAlert({
         title: 'contrato con id: '+id,
-        text:  contrato.nomEntidad+" "+ contrato.lugar+" "+ contrato.detalle+" "+ contrato.valor+" "+ contrato.sospechas,
+        text:  contrato.nomEntidad+"\n "+ contrato.lugar+"\n "+ contrato.detalle+"\n Valor:"+ contrato.valor+"\n \n"+ contrato.sospechas.toString(),
         type: 'info',
         showCancelButton: false,
         closeOnConfirm: false,
@@ -166,10 +166,10 @@ export default class mapColombia extends Component {
                                 </div>
                                 <div className="col-lg-5">
                                     <div className="row">
-                                        <Thumbnail className="col-lg-6 State">
+                                        <div className="col-md-6"><Thumbnail className="col-md-12 State">
                                             <div className="row data float-e-margins">
-                                                <div className="col-md-12 row data-title">
-                                                    <h5 className="col-md-8 bod" id="estadoPozos">Estado de Contratos</h5>
+                                                <div className="col-md-12 row data-title" onClick={()=>{this.dibujar();}}>
+                                                    <h5 className="col-md-8 bod"  id="numTodos">Estado de Contratos</h5>
                                                     <h5 className="col-md-3" id="total"></h5>
                                                 </div>
                                                 <br/><br/>
@@ -199,6 +199,13 @@ export default class mapColombia extends Component {
                                                 </div>
                                             </div>
                                         </Thumbnail>
+                                        <Thumbnail className="col-md-12 State">
+                                          <div><strong>Filtros</strong></div>
+                                          <ul>
+                                            <li>Filtra por estado del contrato: Click en barras de porcentaje.</li>
+                                            <li>Filtra por el precio del contrato: Ingresa un valor</li>
+                                          </ul>
+                                        </Thumbnail></div>
                                         <div className="col-md-1"></div>
                                         <Thumbnail className="col-lg-5 Emergencies">
                                           <div className="row">

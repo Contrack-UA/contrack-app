@@ -172,6 +172,7 @@ h4{
 }
 #porcentajeMal,
 #porcentajeMedio,
+#numTodos,
 #porcentajeBien:hover{
   cursor: pointer;
 }
