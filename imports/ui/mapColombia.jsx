@@ -62,8 +62,9 @@ export default class mapColombia extends Component {
         //trae la proxima lista de contratos de tamaño n
         var msg = lectorSecops.traerProximoLote();
         //console.log(msg);
+        var j=0;
         for (var i = 0; i < msg.length; i++) {
-          mapaContratos[i] = msg[i];
+
             var color = undefined;
             if (msg[i].sospechosidad < NO_SOSPECHOSO) {
                 color = "green";
@@ -97,10 +98,14 @@ export default class mapColombia extends Component {
                 //console.log("el valor de filtro actual es: "+valor +"  el valor del contrato es "+msg[i].valor);
                   if (parseInt(valor) <= msg[i].valor ){
                     console.log("lo agrega");
+                    mapaContratos[j] = msg[i];
+                    j++;
                     convert.push(n);
                   }
               }
               else{
+                mapaContratos[j] = msg[i];
+                j++;
                 convert.push(n);
               }
             }
