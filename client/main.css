@@ -176,8 +176,9 @@ h4{
 #porcentajeBien:hover{
   cursor: pointer;
 }
-#inputValorMapa{
-  width:11em;
+#inputValorMapa,
+#botonFiltroMapa{
+  width:11em !important;
 }
 
 @media (min-width: 992px){

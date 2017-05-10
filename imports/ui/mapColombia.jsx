@@ -94,8 +94,7 @@ export default class mapColombia extends Component {
             else{
               if(valor){
                 //console.log(  msg[i]);
-                console.log("el valor de filtro actual es: "+valor +"  el valor del contrato es "+msg[i].valor);
-                console.log(valor <= msg[i].valor);
+                //console.log("el valor de filtro actual es: "+valor +"  el valor del contrato es "+msg[i].valor);
                   if (parseInt(valor) <= msg[i].valor ){
                     console.log("lo agrega");
                     convert.push(n);
@@ -217,10 +216,10 @@ export default class mapColombia extends Component {
                                         </Thumbnail>
                                         <Thumbnail className="col-md-12 State">
                                           <div><strong>Filtros</strong></div>
-                                            <h5><strong>Filtra</strong> por estado del contrato: Click en barras de porcentaje.</h5>
-                                            <h5><strong>Filtra</strong> por el precio del contrato: Ingresa un valor</h5>
-                                            <input id="inputValorMapa" type="number" onChange={(event) => {valor = event.target.value;}}></input>
-                                            <div className="center" id="botonFiltroMapa"><Button onClick={()=>{this.dibujar();}}>Filtrar</Button></div>
+                                            <h5> Por <strong>estado</strong> del contrato: <br/>Click en barras de porcentaje.</h5>
+                                            <h5> Por <strong>precio </strong>del contrato: Ingresa un valor</h5>
+                                            <div className="center"><input id="inputValorMapa" type="number" onChange={(event) => {valor = event.target.value;}}></input></div>
+                                            <div className="center"><Button  id="botonFiltroMapa" onClick={()=>{this.dibujar();}}>Filtrar</Button></div>
 
                                         </Thumbnail></div>
                                         <div className="col-md-1"></div>
