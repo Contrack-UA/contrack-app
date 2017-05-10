@@ -75,7 +75,7 @@ export default class Contracts1 extends Component {
               if(contract.sospechas.length === 3) {
                 color = 'verybad';
               }
-              if(contract.sospechas.length === 4) {
+              if(contract.sospechas.length >= 4) {
                 color = 'superbad';
               }
               console.log(contract.sospechas.length + "  " + color);

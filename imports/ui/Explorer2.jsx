@@ -83,7 +83,7 @@ export default class Explorer2 extends Component {
                 if(contract.sospechosidad === 3) {
                   color = 'verybad';
                 }
-                if(contract.sospechosidad === 4) {
+                if(contract.sospechosidad >= 4) {
                   color = 'superbad';
                 }
                 return (

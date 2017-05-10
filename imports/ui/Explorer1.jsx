@@ -82,7 +82,7 @@ export default class Explorer1 extends Component {
                 if(contract.sospechas.length === 3) {
                   color = 'verybad';
                 }
-                if(contract.sospechas.length === 4) {
+                if(contract.sospechas.length >= 4) {
                   color = 'superbad';
                 }
                 return (
