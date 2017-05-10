@@ -12,6 +12,16 @@ export default class Graphs1 extends Component {
     }
   }
 
+  formatMoney (n, d, t){
+  var
+      d = d == undefined ? "." : d,
+      t = t == undefined ? "," : t,
+      s = n < 0 ? "-" : "$ ",
+      i = String(parseInt(n = Math.abs(Number(n) || 0))),
+      j = (j = i.length) > 3 ? j % 3 : 0;
+     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t);
+   };
+
   changeGraph(g) {
     this.setState({
       graph: g,
@@ -35,7 +45,7 @@ export default class Graphs1 extends Component {
               height={400}
               data={top20}
               margin={{top: 220, left: 100, right: 100, bottom: 50}}
-              clickHandler={(d) => this.setState({dataDisplay: `${d.x}, tiene un valor de $ ${d.y}`})}
+              clickHandler={(d) => this.setState({dataDisplay: `${d.x}, tiene un valor de ${this.formatMoney(d.y,"'",',')}`})}
             />
           </div>
           <div className="bod" style={{display: 'inline-block', verticalAlign: 'top', paddingLeft: '20px'}}>

@@ -170,6 +170,17 @@
 h4{
   margin-top: 0 !important;
 }
+#porcentajeMal,
+#porcentajeMedio,
+#numTodos,
+#porcentajeBien:hover{
+  cursor: pointer;
+}
+#inputValorMapa,
+#botonFiltroMapa{
+  width:11em !important;
+}
+
 @media (min-width: 992px){
 .col-md-11 {
     width: 100% !important;

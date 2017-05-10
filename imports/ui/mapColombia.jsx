@@ -7,7 +7,10 @@ import lectorSecops from './lectorSecops.js';
 import {Button} from 'react-bootstrap';
 
 const  NO_SOSPECHOSO =2;
-const  SEMI_SOSPECHOSO=4;
+const  SEMI_SOSPECHOSO=3;
+var idSeleccionado = undefined;
+var filtro = undefined;
+var valor = undefined;
 //import manejoRegiones from '../../client/manejoRegiones.js'
 
 export default class mapColombia extends Component {
@@ -16,6 +19,35 @@ export default class mapColombia extends Component {
     this.state = {
       error: '',
     };
+  }
+
+  formatMoney (n, d, t){
+  var
+      d = d == undefined ? "." : d,
+      t = t == undefined ? "," : t,
+      s = n < 0 ? "-" : "$ ",
+      i = String(parseInt(n = Math.abs(Number(n) || 0))),
+      j = (j = i.length) > 3 ? j % 3 : 0;
+     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t);
+   };
+
+  mostrarContrato(id){
+    if(id){
+      var contrato = lectorSecops.buscarContratoId(id);
+      sweetAlert({
+        title: 'Contrato con ID: '+id,
+        text:  contrato.nomEntidad+"\n "+ contrato.lugar+"\n "+
+        contrato.detalle+"\n Valor:"+ this.formatMoney(contrato.valor,"'",',')+"\n \n"+ contrato.sospechas.toString()
+        +"\n \n"+ contrato.link,
+        type: 'info',
+        showCancelButton: false,
+        closeOnConfirm: false,
+        disableButtonsOnConfirm: true,
+        confirmLoadingButtonColor: '#DD6B55'
+      });
+    }else{
+      sweetAlert("Por favor seleccione un contrato del mapa para poder ver sus características.");
+    }
   }
 
   dibujar(){
@@ -41,9 +73,10 @@ export default class mapColombia extends Component {
       for(var w=0;w<cuantosLotesDeObjetos;w++){
         //trae la proxima lista de contratos de tamaño n
         var msg = lectorSecops.traerProximoLote();
-        console.log(msg);
+        //console.log(msg);
+        var j=0;
         for (var i = 0; i < msg.length; i++) {
-          mapaContratos[msg[i]._id] = msg[i];
+
             var color = undefined;
             if (msg[i].sospechosidad < NO_SOSPECHOSO) {
                 color = "green";
@@ -65,10 +98,33 @@ export default class mapColombia extends Component {
                     r: 3
                 }
             };
-            convert.push(n);
+            if(filtro === 'mal' && color !== 'red'){
+            }
+            else if(filtro === 'bien' && color !== 'green'){
+            }
+            else if(filtro === 'medio' && color !== 'yellow'){
+            }
+            else{
+              if(valor){
+                //console.log(  msg[i]);
+                //console.log("el valor de filtro actual es: "+valor +"  el valor del contrato es "+msg[i].valor);
+                  if (parseInt(valor) <= msg[i].valor ){
+                    console.log("lo agrega");
+                    mapaContratos[j] = msg[i];
+                    j++;
+                    convert.push(n);
+                  }
+              }
+              else{
+                mapaContratos[j] = msg[i];
+                j++;
+                convert.push(n);
+              }
+            }
+
         }
         //aquí ya estan todos los contratos a ser dibujados
-        console.log(convert);
+        //console.log(convert);
     }
     $(document).ready(function() {
         $('#colombia-map').vectorMap({
@@ -85,8 +141,9 @@ export default class mapColombia extends Component {
           },
           markers: convert,
           onMarkerClick: function(event, index) {
-            console.log("undio click a "+index);
+              console.log("undio click al numero de contrato creado "+index);
               contratoActual = mapaContratos[index];
+
               console.log(contratoActual);
               var condicionContratoActual = (contratoActual.sospechosidad<NO_SOSPECHOSO?"Bien":(contratoActual.sospechosidad<SEMI_SOSPECHOSO?"Riesgo":"Anormal"));
               $('#infoContrato').text("Contrato id: " + contratoActual._id);
@@ -97,6 +154,8 @@ export default class mapColombia extends Component {
               var certeza2 = Math.floor(Math.random()*50+50);
               $("#certeza1").text(certeza1+"%");
               $("#certeza2").text(certeza2+"%");
+
+              idSeleccionado = contratoActual._id;
           },
           markerStyle: {
               initial: {
@@ -110,6 +169,9 @@ export default class mapColombia extends Component {
       $('#numBien').text(cuantosBien);
       $('#numMedio').text(cuantosMedio);
       $('#numMal').text(cuantosMal);
+      $('#porcentajeBien').width( "");
+      $('#porcentajeMedio').width("");
+      $('#porcentajeMal').width("");
       $('#porcentajeBien').width( (100*cuantosBien/total)+'%');
       $('#porcentajeMedio').width((100*cuantosMedio/total)+'%');
       $('#porcentajeMal').width((100*cuantosMal/total)+'%');
@@ -136,10 +198,10 @@ export default class mapColombia extends Component {
                                 </div>
                                 <div className="col-lg-5">
                                     <div className="row">
-                                        <Thumbnail className="col-lg-6 State">
+                                        <div className="col-md-6"><Thumbnail className="col-md-12 State">
                                             <div className="row data float-e-margins">
-                                                <div className="col-md-12 row data-title">
-                                                    <h5 className="col-md-8 bod" id="estadoPozos">Estado de Contratos</h5>
+                                                <div className="col-md-12 row data-title" onClick={()=>{filtro = undefined;this.dibujar();}}>
+                                                    <h5 className="col-md-8 bod"  id="numTodos">Estado de Contratos</h5>
                                                     <h5 className="col-md-3" id="total"></h5>
                                                 </div>
                                                 <br/><br/>
@@ -150,25 +212,33 @@ export default class mapColombia extends Component {
                                                         <small className="pull-right" id="numBien"></small>
                                                     </div>
                                                     <div className="progress">
-                                                        <div className="progress-bar progress-bar-success" id="porcentajeBien"></div>
+                                                        <div className="progress-bar progress-bar-success" id="porcentajeBien" onClick={()=>{filtro = 'bien';this.dibujar();}}></div>
                                                     </div>
                                                     <div>
                                                         <span>En riesgo</span>
                                                         <small className="pull-right" id="numMedio"></small>
                                                     </div>
                                                     <div className="progress">
-                                                        <div className="progress-bar progress-bar-warning" id="porcentajeMedio"></div>
+                                                        <div className="progress-bar progress-bar-warning" id="porcentajeMedio" onClick={()=>{filtro = 'medio';this.dibujar();}}></div>
                                                     </div>
                                                     <div>
                                                         <span>Condiciones anormales</span>
                                                         <small className="pull-right" id="numMal"></small>
                                                     </div>
                                                     <div className="progress">
-                                                        <div className="progress-bar progress-bar-danger" id="porcentajeMal"></div>
+                                                        <div className="progress-bar progress-bar-danger" id="porcentajeMal" onClick={()=>{filtro = 'mal';this.dibujar();}}></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </Thumbnail>
+                                        <Thumbnail className="col-md-12 State">
+                                          <div><strong>Filtros</strong></div>
+                                            <h5> Por <strong>estado</strong> del contrato: <br/>Click en barras de porcentaje.</h5>
+                                            <h5> Por <strong>precio </strong>del contrato: Ingresa un valor</h5>
+                                            <div className="center"><input id="inputValorMapa" type="number" onChange={(event) => {valor = event.target.value;}}></input></div>
+                                            <div className="center"><Button  id="botonFiltroMapa" onClick={()=>{this.dibujar();}}>Filtrar</Button></div>
+
+                                        </Thumbnail></div>
                                         <div className="col-md-1"></div>
                                         <Thumbnail className="col-lg-5 Emergencies">
                                           <div className="row">
@@ -224,7 +294,7 @@ export default class mapColombia extends Component {
                                                                 <h4 className="m-b-xs">Ver contrato</h4>
                                                             </div>
                                                         </div>
-                                                        <div className="col-md-12 row contenidoInfoContrato">
+                                                        <div className="col-md-12 row contenidoInfoContrato" onClick={()=>{this.mostrarContrato(idSeleccionado);}}>
                                                             <Button className="col-md-12"><div className="col-sm-2">
                                                                 <i className="fa fa-share fa-2x"></i>
                                                             </div>

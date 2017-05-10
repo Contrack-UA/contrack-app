@@ -535,3 +535,90 @@ export default class Appx extends Component {
     );
   }
 }
+
+/*                                <div className="col-lg-6">
+                                    <div className="row data float-e-margins">
+                                        <div className="data-title">
+                                            <span className="label label-info pull-right">Prueba esta nueva funcionalidad</span>
+                                            <h5><strong>Generar Reporte</strong></h5>
+                                        </div>
+                                        <div className="data-content">
+                                            <div className="row">
+                                                <div className="col-lg-12">
+                                                    <button data-toggle="dropdown" className="btn btn-primary btn-block dropdown-toggle">Reporte por Zona
+                                                        <span className="caret"></span>
+                                                    </button>
+                                                    <ul className="dropdown-menu">
+                                                        <li>
+                                                            <a href="#" className="font-bold">Mensual</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Trimestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Semestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Anual</a>
+                                                        </li>
+                                                        <li className="divider"></li>
+                                                        <li>
+                                                            <a href="#">Más opciones</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-lg-12">
+                                                    <button data-toggle="dropdown" className="btn btn-default btn-block dropdown-toggle">Reporte por emergencia
+                                                        <span className="caret"></span>
+                                                    </button>
+                                                    <ul className="dropdown-menu">
+                                                        <li>
+                                                            <a href="#" className="font-bold">Mensual</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Trimestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Semestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Anual</a>
+                                                        </li>
+                                                        <li className="divider"></li>
+                                                        <li>
+                                                            <a href="#">Más opciones</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-lg-12">
+                                                    <button data-toggle="dropdown" className="btn btn-default btn-block dropdown-toggle">Reporte por sensor
+                                                        <span className="caret"></span>
+                                                    </button>
+                                                    <ul className="dropdown-menu">
+                                                        <li>
+                                                            <a href="#" className="font-bold">Mensual</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Trimestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Semestral</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" className="font-bold">Anual</a>
+                                                        </li>
+                                                        <li className="divider"></li>
+                                                        <li>
+                                                            <a href="#">Más opciones</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div*/
+                                
