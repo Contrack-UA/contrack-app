@@ -130,6 +130,7 @@ export default class mapColombia extends Component {
     $(document).ready(function() {
         $('#colombia-map').vectorMap({
           map: 'co_mill',
+          markersSelectableOne: true,
           backgroundColor: "transparent",
           regionStyle: {
               initial: {
@@ -162,6 +163,10 @@ export default class mapColombia extends Component {
               initial: {
                   fill: '#F8E23B',
                   stroke: '#383f47'
+              },
+              selected: {
+                fill: 'blue',
+                stroke: '#383f47'
               }
           }
       });
