@@ -38,12 +38,13 @@ export default class mapColombia extends Component {
         title: 'Contrato con ID: '+id,
         text:  contrato.nomEntidad+"\n "+ contrato.lugar+"\n "+
         contrato.detalle+"\n Valor:"+ this.formatMoney(contrato.valor,"'",',')+"\n \n"+ contrato.sospechas.toString()
-        +"\n \n"+ contrato.link,
+        +"\n \n"+ "OK para ser redirigido al contrato",
         type: 'info',
-        showCancelButton: false,
-        closeOnConfirm: false,
-        disableButtonsOnConfirm: true,
+        showCancelButton: true,
         confirmLoadingButtonColor: '#DD6B55'
+      },
+      function(){
+          window.location.href = contrato.link;
       });
     }else{
       sweetAlert("Por favor seleccione un contrato del mapa para poder ver sus características.");
