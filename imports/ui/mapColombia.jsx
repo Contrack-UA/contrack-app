@@ -93,7 +93,7 @@ export default class mapColombia extends Component {
                 latLng: [
                     msg[i].lat, msg[i].lon
                 ],
-                name: msg[i]._id,
+                name: this.formatMoney(msg[i].valor,"'",','),
                 style: {
                     fill: color,
                     r: 3
@@ -130,6 +130,7 @@ export default class mapColombia extends Component {
     $(document).ready(function() {
         $('#colombia-map').vectorMap({
           map: 'co_mill',
+          markersSelectable: true,
           markersSelectableOne: true,
           backgroundColor: "transparent",
           regionStyle: {
