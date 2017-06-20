@@ -15,11 +15,10 @@ We exploit open data in [Colombia Compra Eficiente](https://www.colombiacompra.g
 
 # The team
 
-We are four Systems and Computing Engineering students at Universidad de los Andes. 
+We are three Systems and Computing Engineering students at Universidad de los Andes. 
 * [Jose Gabriel Tamura](https://github.com/Josega149)
 * [Nicolás Gómez](https://github.com/ngomez22)
 * [Margarita Gómez](https://github.com/margaritagomez)
-* [Esteban Galán](https://github.com/estulo)
 
 # Explore 
 
